@@ -30,7 +30,8 @@ import {
 class Knob2 extends Component {
 
   state = {
-
+    deg: null,
+    deg2: null,
   };
 
   constructor(props) {
@@ -49,7 +50,23 @@ class Knob2 extends Component {
         props.value
       )
     );
-    this.state = { deg: this.currentDeg };
+    this.setState({ deg: this.currentDeg });
+
+
+    this.fullAngle2 = props.degrees2;
+    this.startAngle2 = (360 - props.degrees2) / 2;
+    this.endAngle2 = this.startAngle2 + props.degrees2;
+    this.margin2 = props.size2 * 0.15;
+    this.currentDeg2 = Math.floor(
+      this.convertRange(
+        props.min2,
+        props.max2,
+        this.startAngle2,
+        this.endAngle2,
+        props.value2
+      )
+    );
+    this.setState({ deg2: this.currentDeg2 });
   }
 
   componentDidUpdate() {
@@ -64,6 +81,7 @@ class Knob2 extends Component {
   }
 
   startDrag = e => {
+    console.log('starting drag')
     e.preventDefault();
     const knob = e.target.getBoundingClientRect();
     const pts = {
@@ -129,6 +147,26 @@ class Knob2 extends Component {
     return ticks;
   };
 
+  renderTicks2 = () => {
+    let ticks2 = [];
+    const incr = this.fullAngle2 / this.props.numTicks2;
+    const size = this.margin2 + this.props.size2 / 2;
+    for (let deg = this.startAngle2; deg <= this.endAngle2; deg += incr) {
+      const tick2 = {
+        deg: deg,
+        tickStyle2: {
+          height: size + 10,
+          left: size - 1,
+          top: size + 2,
+          transform: "rotate(" + deg + "deg)",
+          transformOrigin: "top"
+        }
+      };
+      ticks2.push(tick2);
+    }
+    return ticks2;
+  };
+
   dcpy = o => {
     return JSON.parse(JSON.stringify(o));
   };
@@ -156,34 +194,85 @@ class Knob2 extends Component {
     }
     iStyle.transform = "rotate(" + this.state.deg + "deg)";
 
+
+    let kStyle2 = {
+      width: this.props.size2,
+      height: this.props.size2
+    };
+    let iStyle2 = this.dcpy(kStyle2);
+    let oStyle2 = this.dcpy(kStyle2);
+    oStyle2.margin = this.margin2;
+    if (this.props.color2) {
+      oStyle2.backgroundImage =
+        "radial-gradient(100% 70%,hsl(210, " +
+        this.currentDeg2 +
+        "%, " +
+        this.currentDeg2 / 5 +
+        "%),hsl(" +
+        Math.random() * 100 +
+        ",20%," +
+        this.currentDeg2 / 36 +
+        "%))";
+    }
+    iStyle2.transform = "rotate(" + this.state.deg2 + "deg)";
+
     return (
       <div className="KnobBoxTop">
 
-      <div className="App-header">
-        <div className="knob" style={kStyle}>
 
-          <div className="ticks">
-            {this.props.numTicks
-              ? this.renderTicks().map((tick, i) => (
-                  <div
-                    key={i}
-                    className={
-                      "tick" + (tick.deg <= this.currentDeg ? " active" : "")
-                    }
-                    style={tick.tickStyle}
-                  />
-                ))
-              : null}
-          </div>
-          <div className="knob outer" style={oStyle} onMouseDown={this.startDrag}>
-            <div className="knob inner" style={iStyle}>
-              <div className="grip" />
-            </div>
+      <div className="App-header">
+      <Row>
+      <Col md={6}>
+      <div className="knob 2ndKnob" style={kStyle2}>
+        <div className="ticks">
+          {this.props.numTicks2
+            ? this.renderTicks2().map((tick2, i) => (
+                <div
+                  key={i}
+                  className={
+                    "tick" + (tick2.deg <= this.currentDeg2 ? " active" : "")
+                  }
+                  style={tick2.tickStyle2}
+                />
+              ))
+            : null}
+        </div>
+        <div className="knob outer" style={oStyle2} onMouseDown={this.startDrag}>
+          <div className="knob inner" style={iStyle2}>
+            <div className="grip" />
           </div>
         </div>
+      </div>
+      </Col>
+
+      <Col md={6}>
+      <div className="knob topKnob" style={kStyle}>
+        <div className="ticks">
+          {this.props.numTicks
+            ? this.renderTicks().map((tick, i) => (
+                <div
+                  key={i}
+                  className={
+                    "tick" + (tick.deg <= this.currentDeg ? " active" : "")
+                  }
+                  style={tick.tickStyle}
+                />
+              ))
+            : null}
+        </div>
+        <div className="knob outer" style={oStyle} onMouseDown={this.startDrag}>
+          <div className="knob inner" style={iStyle}>
+            <div className="grip" />
+          </div>
+        </div>
+      </div>
+      </Col>
+
+      </Row>
+
+
 
       </div>
-
       </div>
     )
   }

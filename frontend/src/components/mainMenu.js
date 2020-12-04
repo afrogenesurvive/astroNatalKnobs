@@ -42,6 +42,9 @@ const MainMenu = (props) => {
           <Button variant="light" className="mainMenuBtn" onClick={props.menuSelect.bind(this, 'knob3')}>Knob 3</Button>
         </li>
         <li>
+          <Button variant="light" className="mainMenuBtn" onClick={props.menuSelect.bind(this, 'knob4')}>Knob 4</Button>
+        </li>
+        <li>
           <Button variant="light" className="mainMenuBtn" onClick={props.menuSelect.bind(this, 'home')}>Home</Button>
         </li>
       </ul>

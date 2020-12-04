@@ -13,6 +13,7 @@ import MainMenu from '../components/mainMenu'
 import Knob1 from '../components/knob1'
 import Knob2 from '../components/knob2'
 import Knob3 from '../components/knob3'
+import Knob4 from '../components/knob4'
 
 
 class Intro extends Component  {
@@ -75,12 +76,20 @@ class Intro extends Component  {
         {this.state.mainMenuSelect === 'knob2' && (
           <Knob2
             size={100}
-            numTicks={30}
+            numTicks={20}
             degrees={360}
             min={1}
             max={100}
-            value={30}
+            value={20}
             color={true}
+
+            size2={200}
+            numTicks2={10}
+            degrees2={360}
+            min2={1}
+            max2={100}
+            value2={20}
+            color2={true}
           />
         )}
         {this.state.mainMenuSelect === 'knob3' && (
@@ -93,7 +102,10 @@ class Intro extends Component  {
             value={0}
           />
         )}
-
+        {this.state.mainMenuSelect === 'knob4' && (
+          <Knob4
+          />
+        )}
 
 
       </div>
