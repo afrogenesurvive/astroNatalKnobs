@@ -19,7 +19,7 @@ import Knob4 from '../components/knob4'
 class Intro extends Component  {
 
   state = {
-    mainMenuSelect: 'home',
+    mainMenuSelect: 'knob4',
   };
 
   constructor(props) {

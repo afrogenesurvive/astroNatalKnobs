@@ -31,21 +31,21 @@ const Controls = (props) => {
 
     return (
       <div className="controlsTop">
-      <ul className="controlsList">
-        <li>
-          <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'next'})}>Nxt Ring</Button>
-        </li>
-        <li>
-          <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'prev'})}>Prev Ring</Button>
-        </li>
-        <li>
-          <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>Rotate Left</Button>
-        </li>
-        <li>
-          <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>Rotate Right</Button>
-        </li>
-      </ul>
 
+        <ul className="controlsList">
+          <li>
+            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'next'})}>Nxt Ring</Button>
+          </li>
+          <li>
+            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'prev'})}>Prev Ring</Button>
+          </li>
+          <li>
+            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>Rotate Left</Button>
+          </li>
+          <li>
+            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>Rotate Right</Button>
+          </li>
+        </ul>
 
       </div>
     )

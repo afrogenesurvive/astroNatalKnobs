@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 9rem;
+  padding: 5rem;
   align-items: center;
 }
 .canvasBox {
@@ -61,7 +61,11 @@
 
 canvas {
   /* border:1px solid red; */
+  border-radius: 50%;
   /* padding: 3rem; */
+}
+.borderedRing {
+  border:5px solid red;
 }
 
 .controlsBox {
@@ -103,4 +107,32 @@ canvas {
 }
 .pointerIcon {
   color: #ffffff;
+}
+
+.ringInfoDisplay {
+  /* border: 1px solid yellow; */
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.ringInfoList {
+  display: flex;
+  align-items: stretch; /* Default */
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ringInfoList > li {
+  display: block;
+  flex: 0 1 auto; /* Default */
+  list-style-type: none;
+}
+
+.ringInfoText {
+  /* color: #ffffff; */
 }
