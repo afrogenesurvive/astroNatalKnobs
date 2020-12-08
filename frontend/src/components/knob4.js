@@ -52,6 +52,7 @@ class Knob4 extends Component {
   }
 
   componentDidUpdate() {
+    console.log('bazz');
   }
 
   componentDidMount() {
@@ -70,10 +71,15 @@ class Knob4 extends Component {
     const img2 = this.refs.image2;
     const img3 = this.refs.image3;
 
+    img3.onload=function(){
+      context1.drawImage(img1,canvas1.width/2-img1.width/2,canvas1.height/2-img1.width/2);
+      context2.drawImage(img2,canvas2.width/2-img2.width/2,canvas2.height/2-img2.width/2);
+      context3.drawImage(img3,canvas3.width/2-img3.width/2,canvas3.height/2-img3.width/2);
+    }
 
-    context1.drawImage(img1,canvas1.width/2-img1.width/2,canvas1.height/2-img1.width/2);
-    context2.drawImage(img2,canvas2.width/2-img2.width/2,canvas2.height/2-img2.width/2);
-    context3.drawImage(img3,canvas3.width/2-img3.width/2,canvas3.height/2-img3.width/2);
+    // context1.drawImage(img1,canvas1.width/2-img1.width/2,canvas1.height/2-img1.width/2);
+    // context2.drawImage(img2,canvas2.width/2-img2.width/2,canvas2.height/2-img2.width/2);
+    // context3.drawImage(img3,canvas3.width/2-img3.width/2,canvas3.height/2-img3.width/2);
 
   }
 
@@ -96,7 +102,7 @@ class Knob4 extends Component {
     if (args === 'next') {
       if ( currentRing === 3 ) {
         this.setState({
-          selectedRing: 0,
+          selectedRing: 1,
         })
       } else {
         currentRing = currentRing + 1;
@@ -107,7 +113,7 @@ class Knob4 extends Component {
     }
 
     if (args === 'prev') {
-      if ( currentRing === 0 ) {
+      if ( currentRing === 1 ) {
         this.setState({
           selectedRing: 3,
         })
@@ -123,23 +129,66 @@ class Knob4 extends Component {
   rotateRing = (args) => {
     console.log('rotating ring',args);
     if (args === 'right') {
-      let newRot = this.state.rot1+30;
-      if (newRot === 390 ) {
-        newRot = 0;
+      let newRot;
+      if (this.state.selectedRing === 1) {
+        newRot = this.state.rot1+30;
+        if (newRot === 390 ) {
+          newRot = 0;
+        }
+        this.setState({
+          rot1: newRot,
+        })
       }
-      this.setState({
-        rot1: newRot,
-      })
+      if (this.state.selectedRing === 2) {
+        newRot = this.state.rot2+15;
+        if (newRot === 390 ) {
+          newRot = 0;
+        }
+        this.setState({
+          rot2: newRot,
+        })
+      }
+      if (this.state.selectedRing === 3) {
+        newRot = this.state.rot3+10;
+        if (newRot === 390 ) {
+          newRot = 0;
+        }
+        this.setState({
+          rot3: newRot,
+        })
+      }
       this.drawRotated(newRot)
     }
     if (args === 'left') {
-      let newRot = this.state.rot1-30;
-      if (newRot === 0) {
-        newRot = 360;
+      let newRot;
+      if (this.state.selectedRing === 1) {
+        newRot = this.state.rot1-30;
+        if (newRot === 0) {
+          newRot = 360;
+        }
+        this.setState({
+          rot1: newRot,
+        })
       }
-      this.setState({
-        rot1: newRot,
-      })
+      if (this.state.selectedRing === 2) {
+        newRot = this.state.rot2-15;
+        if (newRot === 0) {
+          newRot = 360;
+        }
+        this.setState({
+          rot2: newRot,
+        })
+      }
+      if (this.state.selectedRing === 3) {
+        newRot = this.state.rot3-10;
+        if (newRot === 0) {
+          newRot = 360;
+        }
+        this.setState({
+          rot3: newRot,
+        })
+      }
+
       this.drawRotated(newRot)
     }
   }
@@ -149,7 +198,7 @@ class Knob4 extends Component {
     //select canvas here w/ state selctedRing
     const canvas = this.['canvasRef'+this.state.selectedRing+''].current;
     const context = canvas.getContext('2d');
-    const image = this.refs.image1;
+    const image = this.refs.['image'+this.state.selectedRing];
 
     context.clearRect(0,0,canvas.width,canvas.height);
     context.save();
@@ -167,6 +216,10 @@ class Knob4 extends Component {
         <div className="KnobBoxTop">
 
           <div className="canvasBox">
+            <div className="pointerBox">
+              <FontAwesomeIcon icon={faCaretDown} className="pointerIcon" size="5x"/>
+            </div>
+
             <div className="canvasBox2">
               <canvas
                 width="525"

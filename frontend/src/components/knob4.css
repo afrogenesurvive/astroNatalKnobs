@@ -96,3 +96,11 @@ canvas {
   /* height: 400; */
   display: none;
 }
+
+.pointerBox {
+  /* border: 1px solid #ffffff; */
+  text-align: center;
+}
+.pointerIcon {
+  color: #ffffff;
+}
