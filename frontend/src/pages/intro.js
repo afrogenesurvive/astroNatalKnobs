@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { NavLink } from 'react-router-dom';
-import '../App.css';
+import './intro.css';
 import logo from '../logo.svg';
 
 import MainMenu from '../components/mainMenu'

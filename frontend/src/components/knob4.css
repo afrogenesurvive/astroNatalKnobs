@@ -1,0 +1,98 @@
+.KnobBoxTop {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 9rem;
+  align-items: center;
+}
+.canvasBox {
+  /* position: relative; */
+  /* border: 1px solid #ffffff; */
+  width: 70%;
+  /* height: fit-content; */
+}
+.canvasBox2 {
+  position: relative;
+  /* border: 1px solid pink; */
+  height: 525px;
+  width: 525px;
+  margin: 0 auto;
+}
+
+
+
+.canvas1 {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  top: 0;
+  bottom: 0;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  margin: auto;
+
+  z-index: 3;
+}
+.canvas2 {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  top: 0;
+  bottom: 0;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  margin: auto;
+
+}
+.canvas3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+canvas {
+  /* border:1px solid red; */
+  /* padding: 3rem; */
+}
+
+.controlsBox {
+  /* border:1px solid green; */
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+  width: 60%;
+  margin: 0 auto;
+}
+
+.ringOne {
+  height: 24rem;
+}
+
+.rotOne {
+  transform: rotate(30deg);
+  height: 24rem;
+  display: none;
+}
+.rotTwo {
+  transform: rotate(60deg);
+  height: 24rem;
+}
+.rotThree {
+  transform: rotate(90deg);
+  height: 24rem;
+}
+
+.mainKnob {
+  /* height: 10rem; */
+  /* height: 400; */
+  display: none;
+}

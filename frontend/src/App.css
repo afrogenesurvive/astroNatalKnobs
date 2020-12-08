@@ -19,11 +19,11 @@
   display: flex;
   flex-direction: column;
   padding: 9rem;
-  /* align-items: center;
-  justify-content: center; */
+  align-items: center;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  position: relative;
+  /* position: relative; */
 }
 
 .App-link {
