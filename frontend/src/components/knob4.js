@@ -45,6 +45,12 @@ class Knob4 extends Component {
     canvasClass1: 'canvas1',
     canvasClass2: 'canvas2',
     canvasClass3: 'canvas3',
+    planet: null,
+    sign: null,
+    house: null,
+    planetArray: [],
+    signArray: [],
+    houseArray: [],
   }
 
   constructor(props) {
@@ -135,9 +141,10 @@ class Knob4 extends Component {
 
     if (args === 'prev') {
       if ( currentRing === 1 ) {
+        currentRing = 3;
         this.selectedRing = currentRing;
         this.setState({
-          selectedRing: 3,
+          selectedRing: currentRing,
         })
       } else {
         currentRing = currentRing - 1;
@@ -181,12 +188,13 @@ class Knob4 extends Component {
         canvasClass1: 'canvas1',
       })
     }
-    
+
   }
 
 
   rotateRing = (args) => {
-    console.log('rotating ring',args);
+    console.log('rotating ring');
+
     if (args === 'right') {
       let newRot;
       if (this.state.selectedRing === 1) {
@@ -199,7 +207,7 @@ class Knob4 extends Component {
         })
       }
       if (this.state.selectedRing === 2) {
-        newRot = this.state.rot2+15;
+        newRot = this.state.rot2+30;
         if (newRot === 390 ) {
           newRot = 30;
         }
@@ -208,7 +216,7 @@ class Knob4 extends Component {
         })
       }
       if (this.state.selectedRing === 3) {
-        newRot = this.state.rot3+10;
+        newRot = this.state.rot3+30;
         if (newRot === 390 ) {
           newRot = 30;
         }
@@ -216,7 +224,6 @@ class Knob4 extends Component {
           rot3: newRot,
         })
       }
-
       this.drawRotated(newRot)
     }
 
@@ -232,7 +239,7 @@ class Knob4 extends Component {
         })
       }
       if (this.state.selectedRing === 2) {
-        newRot = this.state.rot2-15;
+        newRot = this.state.rot2-30;
         if (newRot === 0) {
           newRot = 360;
         }
@@ -241,7 +248,7 @@ class Knob4 extends Component {
         })
       }
       if (this.state.selectedRing === 3) {
-        newRot = this.state.rot3-10;
+        newRot = this.state.rot3-30;
         if (newRot === 0) {
           newRot = 360;
         }
@@ -249,10 +256,18 @@ class Knob4 extends Component {
           rot3: newRot,
         })
       }
-
       this.drawRotated(newRot)
     }
 
+    this.checkStats();
+  }
+
+  checkStats = () => {
+    console.log('checking stats');
+    // for each ring
+    // current rotation/increment === index
+    // ring array[index-1]
+    // setstate eg sign
 
   }
 
@@ -288,30 +303,53 @@ class Knob4 extends Component {
                   </li>
                   <li>
                     {this.state.selectedRing === 1 && (
-                      <p className="ringInfoText">Ring Rotation: {this.state.rot1}</p>
+                      <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
                     )}
                     {this.state.selectedRing === 2 && (
-                      <p className="ringInfoText">Ring Rotation: {this.state.rot2}</p>
+                      <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
                     )}
                     {this.state.selectedRing === 3 && (
-                      <p className="ringInfoText">Ring Rotation: {this.state.rot3}</p>
+                      <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
                     )}
                   </li>
+                  {
+                    // <li>
+                    //   {this.state.selectedRing === 1 && (
+                    //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
+                    //   )}
+                    //   {this.state.selectedRing === 2 && (
+                    //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
+                    //   )}
+                    //   {this.state.selectedRing === 3 && (
+                    //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
+                    //   )}
+                    // </li>
+                  }
+                  <li>
+                    <p className="ringInfoText">Planet: {this.state.planet} </p>
+                  </li>
+                  <li>
+                    <p className="ringInfoText">Sign: {this.state.sign} </p>
+                  </li>
+                  <li>
+                    <p className="ringInfoText">House: {this.state.house} </p>
+                  </li>
                 </ul>
+                <p></p>
               </div>
               <FontAwesomeIcon icon={faCaretDown} className="pointerIcon" size="5x"/>
             </div>
 
             <div className="canvasBox2">
               <canvas
-                width="525"
-                height="525"
+                width="750"
+                height="750"
                 ref={this.canvasRef3}
                 className={this.state.canvasClass3}
               />
               <canvas
-                width="425"
-                height="425"
+                width="525"
+                height="525"
                 ref={this.canvasRef2}
                 className={this.state.canvasClass2}
               />

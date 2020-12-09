@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 2rem;
   align-items: center;
 }
 .canvasBox {
@@ -15,8 +15,8 @@
 .canvasBox2 {
   position: relative;
   /* border: 1px solid pink; */
-  height: 525px;
-  width: 525px;
+  height: 740px;
+  width: 740px;
   margin: 0 auto;
 }
 
@@ -77,23 +77,7 @@ canvas {
   margin: 0 auto;
 }
 
-.ringOne {
-  height: 24rem;
-}
 
-.rotOne {
-  transform: rotate(30deg);
-  height: 24rem;
-  display: none;
-}
-.rotTwo {
-  transform: rotate(60deg);
-  height: 24rem;
-}
-.rotThree {
-  transform: rotate(90deg);
-  height: 24rem;
-}
 
 .mainKnob {
   /* height: 10rem; */

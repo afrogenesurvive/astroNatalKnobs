@@ -1,19 +1,25 @@
 .controlsTop {
   margin: 3rem 0;
   z-index: 3;
+  position: absolute;
+  top: 18rem;
+  left: 2rem;
+  border-top: 1px solid #ffffff;
 }
 
 .controlsList {
-    display: flex;
-    align-items: stretch; /* Default */
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
+    /* display: flex; */
+    /* align-items: stretch; */
+    /* justify-content: space-between; */
+    /* width: 100%; */
+    /* margin: 0; */
     padding: 0;
+    text-align: left;
 }
 .controlsList > li {
-    display: block;
-    flex: 0 1 auto; /* Default */
+    /* display: block; */
+    /* flex: 0 1 auto; */
     list-style-type: none;
-    margin: 0 .5rem;
+    /* margin: 0 .5rem; */
+    margin: 1rem 0;
 }
