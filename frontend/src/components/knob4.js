@@ -38,9 +38,10 @@ class Knob4 extends Component {
   state = {
     rings: [1,2,3],
     selectedRing: 1,
-    rot1: 0,
-    rot2: 0,
-    rot3: 0,
+    selectedRingName: 'planet',
+    rot1: 360,
+    rot2: 360,
+    rot3: 360,
     currentRot: null,
     canvasClass1: 'canvas1',
     canvasClass2: 'canvas2',
@@ -48,9 +49,51 @@ class Knob4 extends Component {
     planet: null,
     sign: null,
     house: null,
-    planetArray: [],
-    signArray: [],
-    houseArray: [],
+    planetArray: [
+      'empty',
+      'ascendant',
+      'sun',
+      'moon',
+      'mercury',
+      'venus',
+      'mars',
+      'jupiter',
+      'saturn',
+      'uranus',
+      'neptune',
+      'pluto',
+      'north node',
+    ],
+    signArray: [
+      'empty',
+      'aries',
+      'taurus',
+      'gemini',
+      'cancer',
+      'leo',
+      'virgo',
+      'libra',
+      'scorpio',
+      'sagittarius',
+      'capricorn',
+      'aquarius',
+      'pisces',
+    ],
+    houseArray: [
+      'empty',
+      '1st',
+      '2nd',
+      '3rd',
+      '4th',
+      '5th',
+      '6th',
+      '7th',
+      '8th',
+      '9th',
+      '10th',
+      '11th',
+      '12th',
+    ],
   }
 
   constructor(props) {
@@ -60,11 +103,14 @@ class Knob4 extends Component {
     this.canvasRef2 = React.createRef();
     this.canvasRef3 = React.createRef();
     this.selectedRing = 1;
+    this.planet = 'north node';
+    this.sign = 'pisces';
+    this.house = '12th';
   }
 
   componentDidUpdate() {
-    // console.log('bazz',this.state.selectedRing);
-    // this.resetHighlights()
+
+    // this.checkStats();
   }
 
   componentDidMount() {
@@ -95,10 +141,6 @@ class Knob4 extends Component {
       context3.drawImage(img3,canvas3.width/2-img3.width/2,canvas3.height/2-img3.width/2);
     }
 
-    // this.resetHighlights();
-    // context1.drawImage(img1,canvas1.width/2-img1.width/2,canvas1.height/2-img1.width/2);
-    // context2.drawImage(img2,canvas2.width/2-img2.width/2,canvas2.height/2-img2.width/2);
-    // context3.drawImage(img3,canvas3.width/2-img3.width/2,canvas3.height/2-img3.width/2);
 
   }
 
@@ -136,7 +178,6 @@ class Knob4 extends Component {
         })
       }
 
-      // this.resetHighlights();
     }
 
     if (args === 'prev') {
@@ -154,12 +195,40 @@ class Knob4 extends Component {
         })
       }
 
-      // this.resetHighlights();
     }
 
     console.log('1b',this.selectedRing);
     console.log('2b',this.state.selectedRing);
     this.resetHighlights();
+
+    this.ringNameUpdate()
+
+  }
+
+  ringNameUpdate = () => {
+    switch(this.selectedRing) {
+       case 1: {
+          this.setState({
+            selectedRingName: 'planet',
+          })
+          break;
+       }
+       case 2: {
+          this.setState({
+            selectedRingName: 'sign',
+          })
+          break;
+       }
+       case 3: {
+          this.setState({
+            selectedRingName: 'house',
+          })
+          break;
+       }
+       default: {
+          break;
+       }
+    }
 
   }
 
@@ -231,7 +300,7 @@ class Knob4 extends Component {
       let newRot;
       if (this.state.selectedRing === 1) {
         newRot = this.state.rot1-30;
-        if (newRot === 0) {
+        if (newRot <= 0) {
           newRot = 360;
         }
         this.setState({
@@ -240,7 +309,7 @@ class Knob4 extends Component {
       }
       if (this.state.selectedRing === 2) {
         newRot = this.state.rot2-30;
-        if (newRot === 0) {
+        if (newRot <= 0) {
           newRot = 360;
         }
         this.setState({
@@ -249,7 +318,7 @@ class Knob4 extends Component {
       }
       if (this.state.selectedRing === 3) {
         newRot = this.state.rot3-30;
-        if (newRot === 0) {
+        if (newRot <= 0) {
           newRot = 360;
         }
         this.setState({
@@ -259,19 +328,54 @@ class Knob4 extends Component {
       this.drawRotated(newRot)
     }
 
-    this.checkStats();
+    // this.checkStats();
   }
 
   checkStats = () => {
     console.log('checking stats');
-    // for each ring
-    // current rotation/increment === index
-    // ring array[index-1]
-    // setstate eg sign
+
+    const rings = [1,2,3];
+    for (const elem of rings) {
+
+      let inc = this.state.['rot'+ elem]/30;
+      console.log(elem,inc);
+
+      switch(elem) {
+         case 1: {
+           console.log('planet @',this.state.planetArray[inc]);
+            this.planet = this.state.planetArray[inc];
+            // this.setState({
+            //   planet: this.state.planetArray[inc],
+            // })
+            break;
+         }
+         case 2: {
+           console.log('sign @',this.state.signArray[inc]);
+            this.sign = this.state.signArray[inc];
+            // this.setState({
+            //   sign: this.state.signArray[inc],
+            // })
+            break;
+         }
+         case 3: {
+           console.log('house @',this.state.houseArray[inc]);
+            this.house = this.state.houseArray[inc];
+            // this.setState({
+            //   house: this.state.houseArray[inc],
+            // })
+            break;
+         }
+         default: {
+            break;
+         }
+      }
+
+    }
 
   }
 
   drawRotated = (degrees) => {
+    // console.log('draw',this.state.selectedRing,'draw',degrees);
     // console.log('drawing rotated',degrees,this.state.selectedRing)
     //select canvas here w/ state selctedRing
     const canvas = this.['canvasRef'+this.state.selectedRing+''].current;
@@ -285,6 +389,7 @@ class Knob4 extends Component {
     context.drawImage(image,-image.width/2,-image.width/2);
     context.restore();
 
+    this.checkStats();
 }
 
 
@@ -292,51 +397,61 @@ class Knob4 extends Component {
 
     return (
 
+
         <div className="KnobBoxTop">
+
+        <div className="ringInfoDisplay">
+          <ul className="ringInfoList">
+            <li>
+              <p className="ringInfoText">Selected Ring: <span className="ringInfoSpan">{this.state.selectedRingName}</span> </p>
+            </li>
+
+            {
+              // <li>
+              //   {this.state.selectedRing === 1 && (
+              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
+              //   )}
+              //   {this.state.selectedRing === 2 && (
+              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
+              //   )}
+              //   {this.state.selectedRing === 3 && (
+              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
+              //   )}
+              // </li>
+              // <li>
+              //   {this.state.selectedRing === 1 && (
+              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
+              //   )}
+              //   {this.state.selectedRing === 2 && (
+              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
+              //   )}
+              //   {this.state.selectedRing === 3 && (
+              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
+              //   )}
+              // </li>
+            }
+            <li>
+              <p className="ringInfoText">Planet: <span className="ringInfoSpan">{this.planet}</span> </p>
+            </li>
+            <li>
+              <p className="ringInfoText">Sign: <span className="ringInfoSpan">{this.sign}</span> </p>
+            </li>
+            <li>
+              <p className="ringInfoText">House: <span className="ringInfoSpan">{this.house}</span> </p>
+            </li>
+            <li>
+              <p className="ringInfoText">Interpretation: </p>
+            </li>
+            <li>
+              <p className="ringInfoText">...</p>
+            </li>
+          </ul>
+
+        </div>
 
           <div className="canvasBox">
             <div className="pointerBox">
-              <div className="ringInfoDisplay">
-                <ul className="ringInfoList">
-                  <li>
-                    <p className="ringInfoText">Selected Ring: {this.state.selectedRing} </p>
-                  </li>
-                  <li>
-                    {this.state.selectedRing === 1 && (
-                      <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
-                    )}
-                    {this.state.selectedRing === 2 && (
-                      <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
-                    )}
-                    {this.state.selectedRing === 3 && (
-                      <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
-                    )}
-                  </li>
-                  {
-                    // <li>
-                    //   {this.state.selectedRing === 1 && (
-                    //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
-                    //   )}
-                    //   {this.state.selectedRing === 2 && (
-                    //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
-                    //   )}
-                    //   {this.state.selectedRing === 3 && (
-                    //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
-                    //   )}
-                    // </li>
-                  }
-                  <li>
-                    <p className="ringInfoText">Planet: {this.state.planet} </p>
-                  </li>
-                  <li>
-                    <p className="ringInfoText">Sign: {this.state.sign} </p>
-                  </li>
-                  <li>
-                    <p className="ringInfoText">House: {this.state.house} </p>
-                  </li>
-                </ul>
-                <p></p>
-              </div>
+
               <FontAwesomeIcon icon={faCaretDown} className="pointerIcon" size="5x"/>
             </div>
 

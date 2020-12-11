@@ -1,10 +1,10 @@
 .controlsTop {
-  margin: 3rem 0;
+  /* margin: 3rem 0; */
   z-index: 3;
   position: absolute;
-  top: 18rem;
+  top: 2rem;
   left: 2rem;
-  border-top: 1px solid #ffffff;
+  /* border-top: 1px solid #ffffff; */
 }
 
 .controlsList {
