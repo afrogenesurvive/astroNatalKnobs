@@ -31,6 +31,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import Controls from './controls'
+import RingInfo from './ringInfo'
 
 
 class Knob4 extends Component {
@@ -103,9 +104,12 @@ class Knob4 extends Component {
     this.canvasRef2 = React.createRef();
     this.canvasRef3 = React.createRef();
     this.selectedRing = 1;
-    this.planet = 'north node';
+    this.planet = 'north nodex';
     this.sign = 'pisces';
     this.house = '12th';
+    this.rot1 = 360;
+    this.rot2 = 360;
+    this.rot3 = 360;
   }
 
   componentDidUpdate() {
@@ -117,6 +121,7 @@ class Knob4 extends Component {
 
     document.addEventListener("keypress", e => {
       console.log('gotcha',e.key);
+      this.canvasListeners();
     });
 
     this.setState({
@@ -141,12 +146,58 @@ class Knob4 extends Component {
       context3.drawImage(img3,canvas3.width/2-img3.width/2,canvas3.height/2-img3.width/2);
     }
 
+    this.checkStats();
+    this.canvasListeners()
+
+  }
+
+  canvasListeners = () => {
+    let canvas1 = this.canvasRef1.current;
+    let canvas2 = this.canvasRef2.current;
+    let canvas3 = this.canvasRef3.current;
+
+    canvas1.addEventListener("click", e => {
+      console.log('planet click',e);
+        let mousePos = this.getMousePos(canvas1, e);
+        console.log('planet ring',mousePos.x + ',' + mousePos.y);
+    });
+    canvas2.addEventListener("click", e => {
+      console.log('sign click',e);
+        let mousePos = this.getMousePos(canvas2, e);
+        console.log('sign ring',mousePos.x + ',' + mousePos.y);
+    });
+    canvas3.addEventListener("click", e => {
+      console.log('house click',e);
+        let mousePos = this.getMousePos(canvas3, e);
+        console.log('house ring',mousePos.x + ',' + mousePos.y);
+    });
+
+    //Get Mouse Position
+    // function getMousePos(canvas1, evt) {
+    //     var rect = canvas1.getBoundingClientRect();
+    //     return {
+    //         x: evt.clientX - rect.left,
+    //         y: evt.clientY - rect.top
+    //     };
+    // }
 
   }
 
   componentWillUnmount() {
 
   }
+  // canvas.addEventListener("click", function (evt) {
+  //     var mousePos = this.getMousePos(canvas, evt);
+  //     alert(mousePos.x + ',' + mousePos.y);
+  // }, false);
+
+  getMousePos = (canvas, evt) => {
+    let rect = canvas.getBoundingClientRect();
+    return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+    };
+}
 
   controlsInput = (args) => {
     console.log('controlsInput');
@@ -271,6 +322,7 @@ class Knob4 extends Component {
         if (newRot === 390 ) {
           newRot = 30;
         }
+        this.rot1 = newRot;
         this.setState({
           rot1: newRot,
         })
@@ -280,6 +332,7 @@ class Knob4 extends Component {
         if (newRot === 390 ) {
           newRot = 30;
         }
+        this.rot2 = newRot;
         this.setState({
           rot2: newRot,
         })
@@ -289,6 +342,7 @@ class Knob4 extends Component {
         if (newRot === 390 ) {
           newRot = 30;
         }
+        this.rot3 = newRot;
         this.setState({
           rot3: newRot,
         })
@@ -303,6 +357,7 @@ class Knob4 extends Component {
         if (newRot <= 0) {
           newRot = 360;
         }
+        this.rot1 = newRot;
         this.setState({
           rot1: newRot,
         })
@@ -312,6 +367,7 @@ class Knob4 extends Component {
         if (newRot <= 0) {
           newRot = 360;
         }
+        this.rot2 = newRot;
         this.setState({
           rot2: newRot,
         })
@@ -321,6 +377,7 @@ class Knob4 extends Component {
         if (newRot <= 0) {
           newRot = 360;
         }
+        this.rot3 = newRot;
         this.setState({
           rot3: newRot,
         })
@@ -337,7 +394,7 @@ class Knob4 extends Component {
     const rings = [1,2,3];
     for (const elem of rings) {
 
-      let inc = this.state.['rot'+ elem]/30;
+      let inc = this.['rot'+ elem]/30;
       console.log(elem,inc);
 
       switch(elem) {
@@ -400,54 +457,12 @@ class Knob4 extends Component {
 
         <div className="KnobBoxTop">
 
-        <div className="ringInfoDisplay">
-          <ul className="ringInfoList">
-            <li>
-              <p className="ringInfoText">Selected Ring: <span className="ringInfoSpan">{this.state.selectedRingName}</span> </p>
-            </li>
-
-            {
-              // <li>
-              //   {this.state.selectedRing === 1 && (
-              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
-              //   )}
-              //   {this.state.selectedRing === 2 && (
-              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
-              //   )}
-              //   {this.state.selectedRing === 3 && (
-              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
-              //   )}
-              // </li>
-              // <li>
-              //   {this.state.selectedRing === 1 && (
-              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
-              //   )}
-              //   {this.state.selectedRing === 2 && (
-              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot2}</p>
-              //   )}
-              //   {this.state.selectedRing === 3 && (
-              //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot3}</p>
-              //   )}
-              // </li>
-            }
-            <li>
-              <p className="ringInfoText">Planet: <span className="ringInfoSpan">{this.planet}</span> </p>
-            </li>
-            <li>
-              <p className="ringInfoText">Sign: <span className="ringInfoSpan">{this.sign}</span> </p>
-            </li>
-            <li>
-              <p className="ringInfoText">House: <span className="ringInfoSpan">{this.house}</span> </p>
-            </li>
-            <li>
-              <p className="ringInfoText">Interpretation: </p>
-            </li>
-            <li>
-              <p className="ringInfoText">...</p>
-            </li>
-          </ul>
-
-        </div>
+          <RingInfo
+            planet={this.planet}
+            sign={this.sign}
+            house={this.house}
+            selectedRingName={this.state.selectedRingName}
+          />
 
           <div className="canvasBox">
             <div className="pointerBox">
