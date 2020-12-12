@@ -14,6 +14,9 @@ import logo from '../logo.svg';
 import ring1 from '../assets/img/ring1.png'
 import ring2 from '../assets/img/ring2.png'
 import ring3 from '../assets/img/ring3.png'
+import ringToggled1 from '../assets/img/ringToggled1.png'
+import ringToggled2 from '../assets/img/ringToggled2.png'
+import ringToggled3 from '../assets/img/ringToggled3.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -120,34 +123,37 @@ class Knob4 extends Component {
       {planet: 'north node', words: ['nn1','nn2','nn3','nn4','nn5','nn6','nn7','nn8','nn9','nn10'] },
     ],
     signInterpArray: [
-      {sign: 'aries', words: ['']},
-      {sign: 'taurus', words: ['']},
-      {sign: 'gemini', words: ['']},
-      {sign: 'cancer', words: ['']},
-      {sign: 'leo', words: ['']},
-      {sign: 'virgo', words: ['']},
-      {sign: 'libra', words: ['']},
-      {sign: 'scorpio', words: ['']},
-      {sign: 'sagittarius', words: ['']},
-      {sign: 'capricorn', words: ['']},
-      {sign: 'aquarius', words: ['']},
-      {sign: 'pisces', words: ['']},
+      {sign: 'aries', words: ['aries1','aries2','aries3','aries4','aries5','aries6','aries7','aries8','aries9','aries10']},
+      {sign: 'taurus', words: ['taur1','taur2','taur3','taur4','taur5','taur6','taur7','taur8','taur9','taur10']},
+      {sign: 'gemini', words: ['gem1','gem2','gem3','gem4','gem5','gem6','gem7','gem8','gem9','gem10']},
+      {sign: 'cancer', words: ['can1','can2','can3','can4','can5','can6','can7','can8','can9','can10']},
+      {sign: 'leo', words: ['leo1','leo2','leo3','leo4','leo5','leo6','leo7','leo8','leo9','leo10']},
+      {sign: 'virgo', words: ['vir1','vir2','vir3','vir4','vir5','vir6','vir7','vir8','vir9','vir10']},
+      {sign: 'libra', words: ['lib1','lib2','lib3','lib4','lib5','lib6','lib7','lib8','lib9','lib10']},
+      {sign: 'scorpio', words: ['scorp1','scorp2','scorp3','scorp4','scorp5','scorp6','scorp7','scorp8','scorp9','scorp10']},
+      {sign: 'sagittarius', words: ['sag1','sag2','sag3','sag4','sag5','sag6','sag7','sag8','sag9','sag10']},
+      {sign: 'capricorn', words: ['cap1','cap2','cap3','cap4','cap5','cap6','cap7','cap8','cap9','cap10']},
+      {sign: 'aquarius', words: ['aqua1','aqua2','aqua3','aqua4','aqua5','aqua6','aqua7','aqua8','aqua9','aqua10']},
+      {sign: 'pisces', words: ['pisc1','pisc2','pisc3','pisc4','pisc5','pisc6','pisc7','pisc8','pisc9','pisc10']},
     ],
     houseInterpArray: [
-      {house: '1st', words: ['']},
-      {house: '2nd', words: ['']},
-      {house: '3rd', words: ['']},
-      {house: '4th', words: ['']},
-      {house: '5th', words: ['']},
-      {house: '6th', words: ['']},
-      {house: '7th', words: ['']},
-      {house: '8th', words: ['']},
-      {house: '9th', words: ['']},
-      {house: '10th', words: ['']},
-      {house: '11th', words: ['']},
-      {house: '12th', words: ['']},
+      {house: '1st', words: ['I1','I2','I3','I4','I5','I6','I7','I8','I9','I10']},
+      {house: '2nd', words: ['II1','II2','II3','II4','II5','II6','II7','II8','II9','II10']},
+      {house: '3rd', words: ['III1','III2','III3','III4','III5','III6','III7','III8','III9','III10']},
+      {house: '4th', words: ['IV1','IV2','IV3','IV4','IV5','IV6','IV7','IV8','IV9','IV10']},
+      {house: '5th', words: ['V1','V2','V3','V4','V5','V6','V7','V8','V9','V10']},
+      {house: '6th', words: ['VI1','VI2','VI3','VI4','VI5','VI6','VI7','VI8','VI9','VI10']},
+      {house: '7th', words: ['VII1','VII2','VII3','VII4','VII5','VII6','VII7','VII8','VII9','VII10']},
+      {house: '8th', words: ['VIII1','VIII2','VIII3','VIII4','VIII5','VIII6','VIII7','VIII8','VIII9','VIII10']},
+      {house: '9th', words: ['IX1','IX2','IX3','IX4','IX5','IX6','IX7','IX8','IX9','IX10']},
+      {house: '10th', words: ['X1','X2','X3','X4','X5','X6','X7','X8','X9','X10']},
+      {house: '11th', words: ['XI1','XI2','XI3','XI4','XI5','XI6','XI7','XI8','XI9','XI10']},
+      {house: '12th', words: ['XII1','XII2','XII3','XII4','XII5','XII6','XII7','XII8','XII9','XII10']},
     ],
   }
+  // added combined arrays eg [{sign: 'x',planet:'y',phrases:['xyx']}] ???
+
+
 
   constructor(props) {
     super(props);
@@ -585,46 +591,55 @@ class Knob4 extends Component {
         let preDictionary = this.state.[elem.type+'InterpArray'];
         for (const item of preDictionary) {
           if (item.planet === elem.value) {
-            console.log('beep',item.words);
+            let dictionary = item.words;
+            dictionary = dictionary.sort(() => Math.random() - 0.5);
+            let selection = dictionary.slice(0,4);
+
+            for (const interpElem of interpretation) {
+              if (interpElem.key === 'planet') {
+                interpElem.values.push(selection)
+              }
+            }
           }
         }
-
-        // dictionary = dictionary.sort(() => Math.random() - 0.5);
-        // let selection = dictionary.slice(0,5);
-        //
-        // for (const elem of interpretation) {
-        //   if (elem.key === 'planet') {
-        //     elem.values.push(selection)
-        //   }
-        // }
 
       }
       if (elem.type === 'sign') {
 
         let preDictionary = this.state.[elem.type+'InterpArray'];
-        // let dictionary = this.state.[elem+'InterpArray'];
-        // dictionary = dictionary.sort(() => Math.random() - 0.5);
-        // let selection = dictionary.slice(0,5);
-        //
-        // for (const elem of interpretation) {
-        //   if (elem.key === 'sign') {
-        //     elem.values.push(selection)
-        //   }
-        // }
+
+        for (const item of preDictionary) {
+          if (item.sign === elem.value) {
+            let dictionary = item.words;
+            dictionary = dictionary.sort(() => Math.random() - 0.5);
+            let selection = dictionary.slice(0,4);
+
+            for (const interpElem of interpretation) {
+              if (interpElem.key === 'sign') {
+                interpElem.values.push(selection)
+              }
+            }
+          }
+        }
 
       }
       if (elem.type === 'house') {
 
         let preDictionary = this.state.[elem.type+'InterpArray'];
-        // let dictionary = this.state.[elem+'InterpArray'];
-        // dictionary = dictionary.sort(() => Math.random() - 0.5);
-        // let selection = dictionary.slice(0,5);
-        //
-        // for (const elem of interpretation) {
-        //   if (elem.key === 'house') {
-        //     elem.values.push(selection)
-        //   }
-        // }
+
+        for (const item of preDictionary) {
+          if (item.house === elem.value) {
+            let dictionary = item.words;
+            dictionary = dictionary.sort(() => Math.random() - 0.5);
+            let selection = dictionary.slice(0,4);
+
+            for (const interpElem of interpretation) {
+              if (interpElem.key === 'house') {
+                interpElem.values.push(selection)
+              }
+            }
+          }
+        }
 
       }
     }
@@ -653,17 +668,36 @@ class Knob4 extends Component {
 
 toggleRing = () => {
   console.log('toggling ring');
-  // console.log(this.state.selectedRing,this.selectedRing);
+
   let toToggle = this.selectedRing;
   let index = this.activeRings.indexOf(toToggle)
-  // console.log('fluff',this.activeRings,this.activeRings.includes(toToggle),index)
+
   if (this.activeRings.includes(toToggle) === true) {
     this.activeRings.splice(index,1)
+    this.toggleDraw(toToggle,'remove')
   } else {
     this.activeRings.push(toToggle);
+    this.toggleDraw(toToggle,'add')
   }
-  // console.log('gruff',this.activeRings);
+
+
   this.checkStats();
+}
+
+toggleDraw = (toToggle,action) => {
+
+  const canvas = this.['canvasRef'+toToggle+''].current;
+  const context = canvas.getContext('2d');
+
+  if (action == 'remove') {
+    const img = this.refs.['imageTogggled'+toToggle+''];
+    context.drawImage(img,canvas.width/2-img.width/2,canvas.height/2-img.width/2);
+  }
+  if (action == 'add') {
+    const img = this.refs.['image'+toToggle+''];
+    context.drawImage(img,canvas.width/2-img.width/2,canvas.height/2-img.width/2);
+  }
+
 }
 
 
@@ -720,6 +754,9 @@ toggleRing = () => {
               <img src={ring1} className='mainKnob' ref="image1" alt="logo" />
               <img src={ring2} className="mainKnob" ref="image2" alt="logo" />
               <img src={ring3} className="mainKnob" ref="image3" alt="logo" />
+              <img src={ringToggled1} className='mainKnob' ref="imageTogggled1" alt="logo" />
+              <img src={ringToggled2} className="mainKnob" ref="imageTogggled2" alt="logo" />
+              <img src={ringToggled3} className="mainKnob" ref="imageTogggled3" alt="logo" />
               <Controls
                 controlsInput={this.controlsInput}
                 ringToggle={this.toggleRing}
