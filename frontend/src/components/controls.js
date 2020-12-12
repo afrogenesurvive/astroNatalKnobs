@@ -34,16 +34,40 @@ const Controls = (props) => {
 
         <ul className="controlsList">
           <li>
-            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'next'})}>Nxt Ring</Button>
+            <ul className="controlsSublist">
+              <li>
+                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 1})}>Planet</Button>
+              </li>
+              <li>
+                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 2})}>Sign</Button>
+              </li>
+              <li>
+                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 3})}>House</Button>
+              </li>
+            </ul>
           </li>
           <li>
-            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'prev'})}>Prev Ring</Button>
+            <ul className="controlsSublist">
+              <li>
+                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'next'})}>Nxt Ring</Button>
+              </li>
+              <li>
+                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select',value:'prev'})}>Prev Ring</Button>
+              </li>
+            </ul>
           </li>
           <li>
-            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>Rotate Left</Button>
+            <ul className="controlsSublist">
+              <li>
+                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>Rotate Left</Button>
+              </li>
+              <li>
+                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>Rotate Right</Button>
+              </li>
+            </ul>
           </li>
           <li>
-            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>Rotate Right</Button>
+            <Button variant="light" className="controlsBtn" onClick={props.ringToggle}>Toggle Ring</Button>
           </li>
         </ul>
 

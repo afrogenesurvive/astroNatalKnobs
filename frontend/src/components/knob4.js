@@ -32,6 +32,7 @@ import {
 
 import Controls from './controls'
 import RingInfo from './ringInfo'
+import RingInfoClick from './ringInfo2'
 
 
 class Knob4 extends Component {
@@ -95,6 +96,57 @@ class Knob4 extends Component {
       '11th',
       '12th',
     ],
+    ringClickInfo: {
+      ring: '',
+      coords: {
+        x: '',
+        y: '',
+      },
+      target: '',
+    },
+    clickInfoState: false,
+    planetInterpArray: [
+      {planet: 'ascendant', words: ['asc1','asc2','asc3','asc4','asc5','asc6','asc7','asc8','asc9','asc10'] },
+      {planet: 'sun', words: ['sun1','sun2','sun3','sun4','sun5','sun6','sun7','sun8','sun9','sun10'] },
+      {planet: 'moon', words: ['moon1','moon2','moon3','moon4','moon5','moon6','moon7','moon8','moon9','moon10'] },
+      {planet: 'mercury', words: ['merc1','merc2','merc3','merc4','merc5','merc6','merc7','merc8','merc9','merc10'] },
+      {planet: 'venus', words: ['ven1','ven2','ven3','ven4','ven5','ven6','ven7','ven8','ven9','ven10'] },
+      {planet: 'mars', words: ['mars1','mars2','mars3','mars4','mars5','mars6','mars7','mars8','mars9','mars10'] },
+      {planet: 'jupiter', words: ['jup1','jup2','jup3','jup4','jup5','jup6','jup7','jup8','jup9','jup10'] },
+      {planet: 'saturn', words: ['sat1','sat2','sat3','sat4','sat5','sat6','sat7','sat8','sat9','sat10'] },
+      {planet: 'uranus', words: ['ura1','ura2','ura3','ura4','ura5','ura6','ura7','ura8','ura9','ura10'] },
+      {planet: 'neptune', words: ['nep1','nep2','nep3','nep4','nep5','nep6','nep7','nep8','nep9','nep10'] },
+      {planet: 'pluto', words: ['plu1','plu2','plu3','plu4','plu5','plu6','plu7','plu8','plu9','plu10'] },
+      {planet: 'north node', words: ['nn1','nn2','nn3','nn4','nn5','nn6','nn7','nn8','nn9','nn10'] },
+    ],
+    signInterpArray: [
+      {sign: 'aries', words: ['']},
+      {sign: 'taurus', words: ['']},
+      {sign: 'gemini', words: ['']},
+      {sign: 'cancer', words: ['']},
+      {sign: 'leo', words: ['']},
+      {sign: 'virgo', words: ['']},
+      {sign: 'libra', words: ['']},
+      {sign: 'scorpio', words: ['']},
+      {sign: 'sagittarius', words: ['']},
+      {sign: 'capricorn', words: ['']},
+      {sign: 'aquarius', words: ['']},
+      {sign: 'pisces', words: ['']},
+    ],
+    houseInterpArray: [
+      {house: '1st', words: ['']},
+      {house: '2nd', words: ['']},
+      {house: '3rd', words: ['']},
+      {house: '4th', words: ['']},
+      {house: '5th', words: ['']},
+      {house: '6th', words: ['']},
+      {house: '7th', words: ['']},
+      {house: '8th', words: ['']},
+      {house: '9th', words: ['']},
+      {house: '10th', words: ['']},
+      {house: '11th', words: ['']},
+      {house: '12th', words: ['']},
+    ],
   }
 
   constructor(props) {
@@ -110,6 +162,16 @@ class Knob4 extends Component {
     this.rot1 = 360;
     this.rot2 = 360;
     this.rot3 = 360;
+    this.clickInfoState = false;
+    this.ringClickInfo = {
+      ring: '',
+      coords: {
+        x: '',
+        y: '',
+      },
+      target: '',
+    };
+    this.activeRings = [1,2,3];
   }
 
   componentDidUpdate() {
@@ -121,7 +183,7 @@ class Knob4 extends Component {
 
     document.addEventListener("keypress", e => {
       console.log('gotcha',e.key);
-      this.canvasListeners();
+      // this.canvasListeners();
     });
 
     this.setState({
@@ -157,30 +219,81 @@ class Knob4 extends Component {
     let canvas3 = this.canvasRef3.current;
 
     canvas1.addEventListener("click", e => {
-      console.log('planet click',e);
+      // console.log('planet click',e);
         let mousePos = this.getMousePos(canvas1, e);
         console.log('planet ring',mousePos.x + ',' + mousePos.y);
+        let clickInfo = {
+          ring: 'planet',
+          coords: {
+            x: mousePos.x,
+            y: mousePos.y,
+          },
+          target: '',
+        }
+        // this.setState({
+        //   clickInfoState: true,
+        //   ringClickInfo: clickInfo,
+        // })
+        this.setClickInfo(clickInfo);
+        // this.clickInfoState = true;
+        // this.ringClickInfo = clickInfo;
     });
     canvas2.addEventListener("click", e => {
-      console.log('sign click',e);
+      // console.log('sign click',e);
         let mousePos = this.getMousePos(canvas2, e);
         console.log('sign ring',mousePos.x + ',' + mousePos.y);
+        let clickInfo = {
+          ring: 'sign',
+          coords: {
+            x: mousePos.x,
+            y: mousePos.y,
+          },
+          target: '',
+        }
+        // this.setState({
+        //   clickInfoState: true,
+        //   ringClickInfo: clickInfo,
+        // })
+        this.setClickInfo(clickInfo);
+        // this.clickInfoState = true;
+        // this.ringClickInfo = clickInfo;
     });
     canvas3.addEventListener("click", e => {
-      console.log('house click',e);
+      // console.log('house click',e);
         let mousePos = this.getMousePos(canvas3, e);
         console.log('house ring',mousePos.x + ',' + mousePos.y);
+        let clickInfo = {
+          ring: 'house',
+          coords: {
+            x: mousePos.x,
+            y: mousePos.y,
+          },
+          target: '',
+        }
+        // this.setState({
+        //   clickInfoState: true,
+        //   ringClickInfo: clickInfo,
+        // })
+        this.setClickInfo(clickInfo);
+        // this.clickInfoState = true;
+        // this.ringClickInfo = clickInfo;
     });
 
-    //Get Mouse Position
-    // function getMousePos(canvas1, evt) {
-    //     var rect = canvas1.getBoundingClientRect();
-    //     return {
-    //         x: evt.clientX - rect.left,
-    //         y: evt.clientY - rect.top
-    //     };
-    // }
 
+  }
+
+  setClickInfo = (args) => {
+    console.log('setting click info');
+    this.setState({
+      clickInfoState: true,
+      ringClickInfo: args,
+    })
+  }
+  closeClickInfo = () => {
+    this.clickInfoState = false
+    // this.setState({
+    //   clickInfoState: false
+    // })
   }
 
   componentWillUnmount() {
@@ -205,7 +318,20 @@ class Knob4 extends Component {
       this.selectRing(args.value);
     } else if (args.type === 'rotate') {
       this.rotateRing(args.value)
+    } else if (args.type === 'select2') {
+      this.selectRing2(args.value)
     }
+  }
+
+  selectRing2 = (args) => {
+    console.log('selecting ring 2',args);
+    this.selectedRing = args
+    this.setState({
+      selectedRing: args
+    })
+
+    this.resetHighlights();
+    this.ringNameUpdate()
   }
 
   selectRing = (args) => {
@@ -429,12 +555,88 @@ class Knob4 extends Component {
 
     }
 
+    // **** CLEAR Interpretation w/ every check status ****
+
+    let toInterpret = [];
+    for (const elem of this.activeRings) {
+      if (elem === 1) {
+        toInterpret.push({type:'planet',value:this.planet})
+      }
+      if (elem === 2) {
+        toInterpret.push({type:'sign',value:this.sign})
+      }
+      if (elem === 3) {
+        toInterpret.push({type:'house',value:this.house})
+      }
+    }
+
+    console.log('generate interpretation for ',toInterpret);
+    // check toInterpret for exaltation, detriment and domicile
+
+    let interpretation = [
+      {key: 'planet', values: []},
+      {key: 'sign', values: []},
+      {key: 'house', values: []},
+    ]
+
+    for (const elem of toInterpret) {
+      if (elem.type === 'planet') {
+
+        let preDictionary = this.state.[elem.type+'InterpArray'];
+        for (const item of preDictionary) {
+          if (item.planet === elem.value) {
+            console.log('beep',item.words);
+          }
+        }
+
+        // dictionary = dictionary.sort(() => Math.random() - 0.5);
+        // let selection = dictionary.slice(0,5);
+        //
+        // for (const elem of interpretation) {
+        //   if (elem.key === 'planet') {
+        //     elem.values.push(selection)
+        //   }
+        // }
+
+      }
+      if (elem.type === 'sign') {
+
+        let preDictionary = this.state.[elem.type+'InterpArray'];
+        // let dictionary = this.state.[elem+'InterpArray'];
+        // dictionary = dictionary.sort(() => Math.random() - 0.5);
+        // let selection = dictionary.slice(0,5);
+        //
+        // for (const elem of interpretation) {
+        //   if (elem.key === 'sign') {
+        //     elem.values.push(selection)
+        //   }
+        // }
+
+      }
+      if (elem.type === 'house') {
+
+        let preDictionary = this.state.[elem.type+'InterpArray'];
+        // let dictionary = this.state.[elem+'InterpArray'];
+        // dictionary = dictionary.sort(() => Math.random() - 0.5);
+        // let selection = dictionary.slice(0,5);
+        //
+        // for (const elem of interpretation) {
+        //   if (elem.key === 'house') {
+        //     elem.values.push(selection)
+        //   }
+        // }
+
+      }
+    }
+    console.log('...finalInterpretation...',interpretation);
+
+
   }
 
   drawRotated = (degrees) => {
     // console.log('draw',this.state.selectedRing,'draw',degrees);
     // console.log('drawing rotated',degrees,this.state.selectedRing)
-    //select canvas here w/ state selctedRing
+
     const canvas = this.['canvasRef'+this.state.selectedRing+''].current;
     const context = canvas.getContext('2d');
     const image = this.refs.['image'+this.state.selectedRing];
@@ -447,6 +649,21 @@ class Knob4 extends Component {
     context.restore();
 
     this.checkStats();
+}
+
+toggleRing = () => {
+  console.log('toggling ring');
+  // console.log(this.state.selectedRing,this.selectedRing);
+  let toToggle = this.selectedRing;
+  let index = this.activeRings.indexOf(toToggle)
+  // console.log('fluff',this.activeRings,this.activeRings.includes(toToggle),index)
+  if (this.activeRings.includes(toToggle) === true) {
+    this.activeRings.splice(index,1)
+  } else {
+    this.activeRings.push(toToggle);
+  }
+  // console.log('gruff',this.activeRings);
+  this.checkStats();
 }
 
 
@@ -462,6 +679,13 @@ class Knob4 extends Component {
             sign={this.sign}
             house={this.house}
             selectedRingName={this.state.selectedRingName}
+          />
+
+
+          <RingInfoClick
+            data={this.state.ringClickInfo}
+            closeClickInfo={this.closeClickInfo}
+            state={this.clickInfoState}
           />
 
           <div className="canvasBox">
@@ -498,6 +722,7 @@ class Knob4 extends Component {
               <img src={ring3} className="mainKnob" ref="image3" alt="logo" />
               <Controls
                 controlsInput={this.controlsInput}
+                ringToggle={this.toggleRing}
               />
             </div>
 

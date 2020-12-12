@@ -33,3 +33,12 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
+.ringInfo2Top {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 1rem;
+}
