@@ -28,6 +28,7 @@ import {
 
 
 const RingInfo = (props) => {
+  console.log('fooo',props.interpretation);
 
     return (
 
@@ -76,9 +77,42 @@ const RingInfo = (props) => {
           <li>
             <p className="ringInfoText">Interpretation: </p>
           </li>
-          <li>
-            <p className="ringInfoText">{props.interpretation}</p>
-          </li>
+
+          {
+            // {props.interpretation.planet.state === true && (
+            //   <li>
+            //     <p className="ringInfoText">{props.interpretation.planet.interp}</p>
+            //   </li>
+            // )}
+            // {props.interpretation.sign.state === true && (
+            //   <li>
+            //     <p className="ringInfoText">{props.interpretation.sign.interp}</p>
+            //   </li>
+            // )}
+            // {props.interpretation.house.state === true && (
+            //   <li>
+            //     <p className="ringInfoText">{props.interpretation.house.interp}</p>
+            //   </li>
+            // )}
+          }
+          
+          {props.interpretation.planet.state === true && (
+            <li>
+              <p className="ringInfoText">{props.interpretation.planet.interp}</p>
+            </li>
+          )}
+          {props.interpretation.sign.state === true && (
+            <li>
+              <p className="ringInfoText">{props.interpretation.sign.interp}</p>
+            </li>
+          )}
+          {props.interpretation.house.state === true && (
+            <li>
+              <p className="ringInfoText">{props.interpretation.house.interp}</p>
+            </li>
+          )}
+
+
         </ul>
 
       </div>

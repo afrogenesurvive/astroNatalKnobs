@@ -44,6 +44,7 @@ class Knob4 extends Component {
     rings: [1,2,3],
     selectedRing: 1,
     selectedRingName: 'planet',
+    toggledRing: '',
     rot1: 360,
     rot2: 360,
     rot3: 360,
@@ -194,6 +195,7 @@ class Knob4 extends Component {
       {coords: {x: 528.5,y: 123}, position: 11},
       {coords: {x: 376.5,y: 81}, position: 12},
     ],
+
   }
   // added combined arrays eg [{sign: 'x',planet:'y',phrases:['xyx']}] ???
 
@@ -209,7 +211,11 @@ class Knob4 extends Component {
     this.planet = 'north nodex';
     this.sign = 'pisces';
     this.house = '12th';
-    this.interpretation = '...';
+    this.interpretation = {
+      planet: {state: false, interp: ''},
+      sign: {state: false, interp: ''},
+      house: {state: false, interp: ''},
+    };
     this.rot1 = 360;
     this.rot2 = 360;
     this.rot3 = 360;
@@ -271,6 +277,7 @@ class Knob4 extends Component {
     let canvas3 = this.canvasRef3.current;
 
     canvas1.addEventListener("click", e => {
+      console.log('canvas click1');
       // console.log('planet click',e);
         let mousePos = this.getMousePos(canvas1, e);
         // console.log('planet ring',mousePos.x + ',' + mousePos.y);
@@ -294,6 +301,7 @@ class Knob4 extends Component {
         // this.ringClickInfo = clickInfo;
     });
     canvas2.addEventListener("click", e => {
+      console.log('canvas click2');
       // console.log('sign click',e);
         let mousePos = this.getMousePos(canvas2, e);
         // console.log('sign ring',mousePos.x + ',' + mousePos.y);
@@ -317,6 +325,7 @@ class Knob4 extends Component {
         // this.ringClickInfo = clickInfo;
     });
     canvas3.addEventListener("click", e => {
+      console.log('canvas click3');
       // console.log('house click',e);
         let mousePos = this.getMousePos(canvas3, e);
         // console.log('house ring',mousePos.x + ',' + mousePos.y);
@@ -510,7 +519,7 @@ class Knob4 extends Component {
   }
 
   selectRing2 = (args) => {
-    console.log('selecting ring 2',args);
+    console.log('selecting ring 2');
     this.selectedRing = args
     this.setState({
       selectedRing: args
@@ -523,8 +532,8 @@ class Knob4 extends Component {
   selectRing = (args) => {
     let currentRing = this.state.selectedRing;
     console.log('selecting ring');
-    console.log('1a',this.selectedRing);
-    console.log('2a',this.state.selectedRing);
+    // console.log('1a',this.selectedRing);
+    // console.log('2a',this.state.selectedRing);
 
     if (args === 'next') {
       if ( currentRing === 3 ) {
@@ -560,8 +569,8 @@ class Knob4 extends Component {
 
     }
 
-    console.log('1b',this.selectedRing);
-    console.log('2b',this.state.selectedRing);
+    // console.log('1b',this.selectedRing);
+    // console.log('2b',this.state.selectedRing);
     this.resetHighlights();
 
     this.ringNameUpdate()
@@ -596,8 +605,8 @@ class Knob4 extends Component {
   }
 
   resetHighlights = () => {
-    console.log('1c',this.selectedRing);
-    console.log('2c',this.state.selectedRing);
+    // console.log('1c',this.selectedRing);
+    // console.log('2c',this.state.selectedRing);
 
     if (this.selectedRing === 1) {
       this.setState({
@@ -747,7 +756,7 @@ class Knob4 extends Component {
       }
     }
 
-    console.log('generate interpretation for ',toInterpret);
+    // console.log('generate interpretation for ',toInterpret);
 
     this.generateInterpetation(toInterpret)
 
@@ -762,6 +771,12 @@ class Knob4 extends Component {
       {key: 'sign', val: '', values: []},
       {key: 'house', val: '', values: []},
     ]
+
+    let thisInterpretation = {
+      planet: {state: false, interp: ''},
+      sign: {state: false, interp: ''},
+      house: {state: false, interp: ''},
+    };
 
     for (const elem of toInterpret) {
       if (elem.type === 'planet') {
@@ -781,7 +796,7 @@ class Knob4 extends Component {
             }
           }
         }
-
+        thisInterpretation.planet.state = true;
       }
       if (elem.type === 'sign') {
 
@@ -801,7 +816,7 @@ class Knob4 extends Component {
             }
           }
         }
-
+        thisInterpretation.sign.state = true;
       }
       if (elem.type === 'house') {
 
@@ -821,10 +836,24 @@ class Knob4 extends Component {
             }
           }
         }
-
+        thisInterpretation.house.state = true;
       }
+
     }
+
     console.log('...finalInterpretation...',interpretation);
+    if (thisInterpretation.planet.state === true ) {
+      thisInterpretation.planet.interp = `Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}...`
+    }
+    if (thisInterpretation.sign.state === true ) {
+      thisInterpretation.sign.interp = `Being in ${interpretation[1].val}: has the qualities of ${interpretation[1].values[0][0]}, ${interpretation[1].values[0][1]}, ${interpretation[1].values[0][3]}...`
+    }
+    if (thisInterpretation.house.state === true ) {
+      thisInterpretation.house.interp = `particularly in these areas of life ${interpretation[2].values[0][0]}, ${interpretation[2].values[0][1]}, ${interpretation[2].values[0][3]}...`
+    }
+    this.interpretation = thisInterpretation;
+    // console.log('froome',this.interpretation);
+
     // this.interpretation =`
     //   Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}... \n
     //
@@ -868,6 +897,10 @@ class Knob4 extends Component {
     this.toggleDraw(toToggle,'add')
   }
 
+  this.setState({
+    toggledRing: toToggle
+  })
+
 
   this.checkStats();
 }
@@ -901,6 +934,7 @@ class Knob4 extends Component {
             sign={this.sign}
             house={this.house}
             interpretation={this.interpretation}
+            activeRings={this.activeRings}
             selectedRingName={this.state.selectedRingName}
           />
 
