@@ -35,13 +35,14 @@ const RingInfoClick = (props) => {
 
         <div>
         <p>Ring: {props.data.ring} </p>
-        <p>Coords: </p>
-        <p>{props.data.coords.x} </p>
-        <p>{props.data.coords.y} </p>
         <p>Target: {props.data.target} </p>
+        <p>Desc: {props.data.desc} </p>
         </div>
 
       {
+        // <img src={props.data.img} className='mainKnob' alt="logo" />
+
+
         // <a href="javascript:void(0);">
         //   <Button variant="light" className="ringClickCloseBtn" onClick={props.closeClickInfo()}>close</Button>
         // </a>

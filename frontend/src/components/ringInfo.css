@@ -2,6 +2,7 @@
   /* border: 1px solid yellow; */
   border-radius: 5px;
   /* width: 80%; */
+  max-width: 20rem;
   margin: 0 auto;
   padding: 1rem;
   background-color: #ffffff;

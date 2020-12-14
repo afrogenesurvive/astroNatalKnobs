@@ -77,7 +77,7 @@ const RingInfo = (props) => {
             <p className="ringInfoText">Interpretation: </p>
           </li>
           <li>
-            <p className="ringInfoText">...</p>
+            <p className="ringInfoText">{props.interpretation}</p>
           </li>
         </ul>
 
