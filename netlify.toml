@@ -1,0 +1,13 @@
+  # [build]
+  # command = "npm run build"
+  # publish="/build"
+
+  [build]
+  command = "CI= npm run-script build"
+  publish="/build"
+  base = "/"
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
