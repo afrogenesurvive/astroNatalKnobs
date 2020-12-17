@@ -78,3 +78,19 @@
   }
 
 }
+
+@media screen and (max-height: 640px) {
+
+  .ringInfoDisplay {
+
+  }
+  .ringInfo2Top {
+    bottom: -12rem !important;
+  }
+}
+
+@media screen and (max-height: 570px) {
+  .ringInfo2Top {
+    bottom: -17rem !important;
+  }
+}

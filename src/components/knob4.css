@@ -179,3 +179,19 @@ canvas {
     width: 400px !important;
   } */
 }
+
+@media screen and (max-height: 640px) {
+  .KnobBoxTop {
+    min-height: 135vh;
+  }
+}
+@media screen and (max-height: 570px) {
+  .KnobBoxTop {
+    min-height: 150vh;
+  }
+}
+@media screen and (max-width: 350px) {
+  .KnobBoxTop {
+    width: 120vw;
+  }
+}
