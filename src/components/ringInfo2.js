@@ -37,7 +37,7 @@ const RingInfoClick = (props) => {
 
         <div>
 
-        <a href="javascript:void(0);">
+        <a href="javascript:void(0);" className="clickInfoClose">
           <Button variant="light" className="ringClickCloseBtn" onClick={props.toggleClickInfo}>X</Button>
         </a>
 

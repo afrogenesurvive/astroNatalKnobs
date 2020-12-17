@@ -46,7 +46,14 @@
   border: 2px solid black;
   padding: 1rem;
   max-width: 30rem;
+  min-width: 12rem;
   box-shadow: 0px 7px 15px rgba(20,33,61,.4);
+}
+
+.clickInfoClose {
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
 }
 
 @media screen and (max-width: 420px) {

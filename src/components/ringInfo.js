@@ -34,7 +34,7 @@ const RingInfo = (props) => {
       <div className="ringInfoDisplay">
         <ul className="ringInfoList">
           <li>
-            <a href="javascript:void(0);">
+            <a href="javascript:void(0);" className="clickInfoClose">
               <Button variant="light" className="ringCloseBtn" onClick={props.toggleRingInfo}>X</Button>
             </a>
           </li>
