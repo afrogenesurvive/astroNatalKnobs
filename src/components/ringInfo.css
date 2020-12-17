@@ -1,14 +1,16 @@
 .ringInfoDisplay {
   /* border: 1px solid yellow; */
   border-radius: 5px;
+  border: 2px solid black;
   /* width: 80%; */
-  max-width: 25rem;
+  max-width: 30rem;
   margin: 0 auto;
   padding: 1rem;
   background-color: #ffffff;
   position: absolute;
   left: 2rem;
   top: 9rem;
+  box-shadow: 0px 7px 15px rgba(20,33,61,.4);
 }
 
 .ringInfoList {
@@ -41,8 +43,10 @@
   left: 2rem;
   background-color: #ffffff;
   border-radius: 5px;
+  border: 2px solid black;
   padding: 1rem;
-  max-width: 25rem;
+  max-width: 30rem;
+  box-shadow: 0px 7px 15px rgba(20,33,61,.4);
 }
 
 @media screen and (max-width: 420px) {
@@ -55,6 +59,15 @@
 
   .ringInfoDisplay {
     max-width: 20rem;
+    top: 32rem;
+    height: 20rem;
+    overflow: scroll;
+  }
+
+  .ringInfo2Top {
+    bottom: -6rem;
+    height: 20rem;
+    overflow: scroll;
   }
 
 }

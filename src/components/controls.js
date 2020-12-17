@@ -33,6 +33,7 @@ import {
   faHome,
   faMoon,
   faSign,
+  faQuestionCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -194,10 +195,32 @@ const Controls = (props) => {
             </Button>
             </OverlayTrigger>
             </li>
+            {props.ringInfoState === false && (
+              <li>
+              <OverlayTrigger
+
+                placement={'bottom'}
+                overlay={
+                  <Popover id={`popover-positioned-${'bottom'}`}>
+                    <Popover.Content>
+                      <strong>Restore Info Window 1</strong>
+                    </Popover.Content>
+                  </Popover>
+                }
+              >
+              <Button variant="light" className="controlsBtn" onClick={props.toggleRingInfo}>
+                <FontAwesomeIcon icon={faQuestionCircle} className="controlIcon" size="lg"/>
+              </Button>
+              </OverlayTrigger>
+              </li>
+            )}
+
             </ul>
           </li>
 
         </ul>
+
+
 
         <ul className="controlsList mobile">
           <li>
@@ -216,7 +239,7 @@ const Controls = (props) => {
               }
             >
               <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 1})}>
-                <FontAwesomeIcon icon={faMoon} className="controlIcon" size="md"/>
+                <FontAwesomeIcon icon={faMoon} className="controlIcon" size="sm"/>
               </Button>
             </OverlayTrigger>
 
@@ -234,7 +257,7 @@ const Controls = (props) => {
               }
             >
               <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 2})}>
-                <FontAwesomeIcon icon={faSign} className="controlIcon" size="md"/>
+                <FontAwesomeIcon icon={faSign} className="controlIcon" size="sm"/>
               </Button>
             </OverlayTrigger>
             </li>
@@ -251,7 +274,7 @@ const Controls = (props) => {
               }
             >
               <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 3})}>
-                <FontAwesomeIcon icon={faHome} className="controlIcon" size="md"/>
+                <FontAwesomeIcon icon={faHome} className="controlIcon" size="sm"/>
               </Button>
             </OverlayTrigger>
             </li>
@@ -269,7 +292,7 @@ const Controls = (props) => {
                 }
               >
               <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>
-                <FontAwesomeIcon icon={faStepBackward} className="controlIcon" size="md"/>
+                <FontAwesomeIcon icon={faStepBackward} className="controlIcon" size="sm"/>
               </Button>
               </OverlayTrigger>
               </li>
@@ -286,7 +309,7 @@ const Controls = (props) => {
                 }
               >
               <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>
-                <FontAwesomeIcon icon={faStepForward} className="controlIcon" size="md"/>
+                <FontAwesomeIcon icon={faStepForward} className="controlIcon" size="sm"/>
               </Button>
               </OverlayTrigger>
               </li>
@@ -303,11 +326,33 @@ const Controls = (props) => {
                 }
               >
               <Button variant="light" className="controlsBtn" onClick={props.ringToggle}>
-                <FontAwesomeIcon icon={faToggleOn} className="controlIcon" size="md"/>
+                <FontAwesomeIcon icon={faToggleOn} className="controlIcon" size="sm"/>
               </Button>
               </OverlayTrigger>
               </li>
+
+              {props.ringInfoState === false && (
+                <li>
+                <OverlayTrigger
+
+                  placement={'bottom'}
+                  overlay={
+                    <Popover id={`popover-positioned-${'bottom'}`}>
+                      <Popover.Content>
+                        <strong>Restore Info Window 1</strong>
+                      </Popover.Content>
+                    </Popover>
+                  }
+                >
+                <Button variant="light" className="controlsBtn" onClick={props.toggleRingInfo}>
+                  <FontAwesomeIcon icon={faQuestionCircle} className="controlIcon" size="sm"/>
+                </Button>
+                </OverlayTrigger>
+                </li>
+              )}
+
             </ul>
+
           </li>
         </ul>
 

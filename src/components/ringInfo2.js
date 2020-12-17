@@ -36,11 +36,17 @@ const RingInfoClick = (props) => {
       <div className="ringInfo2Top">
 
         <div>
+
+        <a href="javascript:void(0);">
+          <Button variant="light" className="ringClickCloseBtn" onClick={props.toggleClickInfo}>X</Button>
+        </a>
+
         <p>Ring: {props.data.ring} </p>
         <p>Target: {props.data.target} </p>
         <p>Desc: {props.data.desc} </p>
         <p>Coords: {props.data.coords.x}, {props.data.coords.y} </p>
         </div>
+
 
 
       {

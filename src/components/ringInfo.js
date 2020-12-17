@@ -34,6 +34,11 @@ const RingInfo = (props) => {
       <div className="ringInfoDisplay">
         <ul className="ringInfoList">
           <li>
+            <a href="javascript:void(0);">
+              <Button variant="light" className="ringCloseBtn" onClick={props.toggleRingInfo}>X</Button>
+            </a>
+          </li>
+          <li>
             <p className="ringInfoText">Selected Ring: <span className="ringInfoSpan">{props.selectedRingName}</span> </p>
           </li>
 

@@ -157,6 +157,7 @@ canvas {
 
   .KnobBoxTop {
     width: 110vw;
+    min-height: 120vh;
   }
 
   .canvasBox {

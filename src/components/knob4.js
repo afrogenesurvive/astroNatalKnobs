@@ -123,6 +123,7 @@ class Knob4 extends Component {
       desc: '',
     },
     clickInfoState: false,
+    ringInfoState: true,
     planetInterpArray: [
       {planet: 'ascendant', words: ['asc1','asc2','asc3','asc4','asc5','asc6','asc7','asc8','asc9','asc10'] },
       {planet: 'sun', words: ['sun1','sun2','sun3','sun4','sun5','sun6','sun7','sun8','sun9','sun10'] },
@@ -166,46 +167,46 @@ class Knob4 extends Component {
       {house: '12th', words: ['XII1','XII2','XII3','XII4','XII5','XII6','XII7','XII8','XII9','XII10']},
     ],
     planetCoordArray: [
-      {coords: {x: 169,y: 38.5}, position: 12, mobileCoords: {x: 105, y: 22}},
-      {coords: {x: 102,y: 56.5}, position: 1, mobileCoords: {x: 61, y: 36}},
-      {coords: {x: 55,y: 106.5}, position: 2, mobileCoords: {x: 32, y: 65}},
-      {coords: {x: 39,y: 169.5}, position: 3, mobileCoords: {x: 23, y: 107}},
-      {coords: {x: 58,y: 230.5}, position: 4, mobileCoords: {x: 36 , y: 145}},
-      {coords: {x: 105,y: 276.5}, position: 5, mobileCoords: {x: 64, y: 177}},
-      {coords: {x: 169,y: 290.5}, position: 6, mobileCoords: {x: 108, y: 186}},
-      {coords: {x: 231,y: 275.5}, position: 7, mobileCoords: {x: 145, y: 176}},
-      {coords: {x: 276,y: 229.5}, position: 8, mobileCoords: {x: 174, y: 147}},
-      {coords: {x: 296,y: 168.5}, position: 9, mobileCoords: {x: 186, y: 108}},
-      {coords: {x: 282,y: 107.5}, position: 10, mobileCoords: {x: 176, y: 68}},
-      {coords: {x: 237.5,y: 61}, position: 11, mobileCoords: {x: 148, y: 37}},
+      {coords: {x: 169,y: 38.5}, position: 12, mobileCoords: {x: 80, y: 19}},
+      {coords: {x: 102,y: 56.5}, position: 1, mobileCoords: {x: 48, y: 27}},
+      {coords: {x: 55,y: 106.5}, position: 2, mobileCoords: {x: 25, y: 50}},
+      {coords: {x: 39,y: 169.5}, position: 3, mobileCoords: {x: 17, y: 81}},
+      {coords: {x: 58,y: 230.5}, position: 4, mobileCoords: {x: 28 , y: 111}},
+      {coords: {x: 105,y: 276.5}, position: 5, mobileCoords: {x: 50, y: 133}},
+      {coords: {x: 169,y: 290.5}, position: 6, mobileCoords: {x: 81, y: 140}},
+      {coords: {x: 231,y: 275.5}, position: 7, mobileCoords: {x: 110, y: 134}},
+      {coords: {x: 276,y: 229.5}, position: 8, mobileCoords: {x: 133, y: 112}},
+      {coords: {x: 296,y: 168.5}, position: 9, mobileCoords: {x: 142, y: 81}},
+      {coords: {x: 282,y: 107.5}, position: 10, mobileCoords: {x: 133, y: 52}},
+      {coords: {x: 237.5,y: 61}, position: 11, mobileCoords: {x: 112, y: 28}},
     ],
     signCoordArray: [
-      {coords: {x: 153,y: 87.5}, position: 1, mobileCoords: {x: 89, y: 54}},
-      {coords: {x: 77,y: 169.5}, position: 2, mobileCoords: {x: 46, y: 99}},
-      {coords: {x: 50,y: 270.5}, position: 3, mobileCoords: {x: 32, y: 156}},
-      {coords: {x: 84,y: 377.5}, position: 4, mobileCoords: {x: 51, y: 215}},
-      {coords: {x: 155,y: 445.5}, position: 5, mobileCoords: {x: 89, y: 254}},
-      {coords: {x: 261,y: 469.5}, position: 6, mobileCoords: {x: 150, y: 268}},
-      {coords: {x: 364,y: 442.5}, position: 7, mobileCoords: {x: 207, y: 251}},
-      {coords: {x: 443,y: 372.5}, position: 8, mobileCoords: {x: 249, y: 213}},
-      {coords: {x: 467,y: 278.5}, position: 9, mobileCoords: {x: 265, y: 161}},
-      {coords: {x: 446,y: 167.5}, position: 10, mobileCoords: {x: 251, y: 97}},
-      {coords: {x: 371,y: 85.5}, position: 11, mobileCoords: {x: 210, y: 50}},
-      {coords: {x: 263,y: 54.5}, position: 12, mobileCoords: {x: 149, y: 35}},
+      {coords: {x: 153,y: 87.5}, position: 1, mobileCoords: {x: 66, y: 38}},
+      {coords: {x: 77,y: 169.5}, position: 2, mobileCoords: {x: 31, y: 75}},
+      {coords: {x: 50,y: 270.5}, position: 3, mobileCoords: {x: 21, y: 120}},
+      {coords: {x: 84,y: 377.5}, position: 4, mobileCoords: {x: 36, y: 166}},
+      {coords: {x: 155,y: 445.5}, position: 5, mobileCoords: {x: 66, y: 198}},
+      {coords: {x: 261,y: 469.5}, position: 6, mobileCoords: {x: 112, y: 207}},
+      {coords: {x: 364,y: 442.5}, position: 7, mobileCoords: {x: 158, y: 193}},
+      {coords: {x: 443,y: 372.5}, position: 8, mobileCoords: {x: 190, y: 163}},
+      {coords: {x: 467,y: 278.5}, position: 9, mobileCoords: {x: 204, y: 112}},
+      {coords: {x: 446,y: 167.5}, position: 10, mobileCoords: {x: 193, y: 84}},
+      {coords: {x: 371,y: 85.5}, position: 11, mobileCoords: {x: 161, y: 38}},
+      {coords: {x: 263,y: 54.5}, position: 12, mobileCoords: {x: 113, y: 25}},
     ],
     houseCoordArray: [
-      {coords: {x: 221.5,y: 126}, position: 1, mobileCoords: {x: 115, y: 63}},
-      {coords: {x: 116.5,y: 240}, position: 2, mobileCoords: {x: 57, y: 128}},
-      {coords: {x: 76.5,y: 385}, position: 3, mobileCoords: {x: 36, y: 205}},
-      {coords: {x: 135.5,y: 537}, position: 4, mobileCoords: {x: 61, y: 290}},
-      {coords: {x: 235.5,y: 634}, position: 5, mobileCoords: {x: 121, y: 347}},
-      {coords: {x: 374.5,y: 663}, position: 6, mobileCoords: {x: 200, y: 364}},
-      {coords: {x: 514.5,y: 635}, position: 7, mobileCoords: {x: 279, y: 347}},
-      {coords: {x: 626.5,y: 535}, position: 8, mobileCoords: {x: 340, y: 289}},
-      {coords: {x: 668.5,y: 385}, position: 9, mobileCoords: {x: 363, y: 206}},
-      {coords: {x: 635.5,y: 239}, position: 10, mobileCoords: {x: 345, y: 122}},
-      {coords: {x: 528.5,y: 123}, position: 11, mobileCoords: {x: 285, y: 59}},
-      {coords: {x: 376.5,y: 81}, position: 12, mobileCoords: {x: 198, y: 39}},
+      {coords: {x: 221.5,y: 126}, position: 1, mobileCoords: {x: 115, y: 77}},
+      {coords: {x: 116.5,y: 240}, position: 2, mobileCoords: {x: 66, y: 125}},
+      {coords: {x: 76.5,y: 385}, position: 3, mobileCoords: {x: 51, y: 190}},
+      {coords: {x: 135.5,y: 537}, position: 4, mobileCoords: {x: 73, y: 251}},
+      {coords: {x: 235.5,y: 634}, position: 5, mobileCoords: {x: 121, y: 298}},
+      {coords: {x: 374.5,y: 663}, position: 6, mobileCoords: {x: 180, y: 309}},
+      {coords: {x: 514.5,y: 635}, position: 7, mobileCoords: {x: 242, y: 301}},
+      {coords: {x: 626.5,y: 535}, position: 8, mobileCoords: {x: 289, y: 255}},
+      {coords: {x: 668.5,y: 385}, position: 9, mobileCoords: {x: 210, y: 188}},
+      {coords: {x: 635.5,y: 239}, position: 10, mobileCoords: {x: 297, y: 122}},
+      {coords: {x: 528.5,y: 123}, position: 11, mobileCoords: {x: 250, y: 72}},
+      {coords: {x: 376.5,y: 81}, position: 12, mobileCoords: {x: 182, y: 54}},
     ],
     switch: false,
   }
@@ -645,11 +646,31 @@ class Knob4 extends Component {
     return false;
   }
 
-  closeClickInfo = () => {
-    this.clickInfoState = false
-    this.setState({
-      clickInfoState: false
-    })
+  toggleClickInfo = () => {
+    if (this.state.clickInfoState === true) {
+      this.clickInfoState = false
+      this.setState({
+        clickInfoState: false
+      })
+    } else {
+      this.clickInfoState = true
+      this.setState({
+        clickInfoState: true
+      })
+    }
+
+  }
+  toggleRingInfo = () => {
+    if (this.state.ringInfoState === true) {
+      this.setState({
+        ringInfoState: false
+      })
+    } else {
+      this.setState({
+        ringInfoState: true
+      })
+    }
+
   }
 
   componentWillUnmount() {
@@ -1134,24 +1155,30 @@ class Knob4 extends Component {
             controlsInput={this.controlsInput}
             ringToggle={this.toggleRing}
             toggleMobile={this.toggleMobile}
+            ringInfoState={this.state.ringInfoState}
+            toggleRingInfo={this.toggleRingInfo}
           />
 
-          <RingInfo
-            planet={this.planet}
-            sign={this.sign}
-            house={this.house}
-            interpretation={this.interpretation}
-            activeRings={this.activeRings}
-            selectedRingName={this.state.selectedRingName}
-          />
+          {this.state.ringInfoState === true && (
+            <RingInfo
+              planet={this.planet}
+              sign={this.sign}
+              house={this.house}
+              interpretation={this.interpretation}
+              activeRings={this.activeRings}
+              selectedRingName={this.state.selectedRingName}
+              toggleRingInfo={this.toggleRingInfo}
+            />
+          )}
 
 
+          {this.state.clickInfoState === true && (
             <RingInfoClick
               data={this.state.ringClickInfo}
-              closeClickInfo={this.closeClickInfo}
-              state={this.clickInfoState}
+              toggleClickInfo={this.toggleClickInfo}
+              state={this.state.clickInfoState}
             />
-
+          )}
 
 
           <div className="canvasBox">
