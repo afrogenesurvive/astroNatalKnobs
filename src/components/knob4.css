@@ -1,3 +1,7 @@
+.mobile {
+  display: none;
+}
+
 .KnobBoxTop {
   background-color: #282c34;
   min-height: 110vh;
@@ -8,7 +12,8 @@
 }
 .canvasBox {
   position: absolute;
-  right: 2rem;
+  /* left: 30rem; */
+  right: 10rem;
   /* border: 1px solid #ffffff; */
   /* width: 70%; */
   width: fit-content;
@@ -23,8 +28,8 @@
 }
 
 .canvasBox2Mobile {
-  height: 400px !important;
-  width: 400px !important;
+  height: 370px !important;
+  width: 370px !important;
 }
 .canvasBox3 {
   position: relative;
@@ -115,7 +120,7 @@ canvas {
   background-color: #ffffff;
   position: absolute;
   left: 2rem;
-  top: 18rem;
+  top: 10rem;
 }
 
 .ringInfoList {
@@ -140,4 +145,36 @@ canvas {
 .ringInfoSpan {
   text-decoration: underline;
   font-weight: bold;
+}
+
+@media screen and (max-width: 420px) {
+  .mobile {
+    display: inline-block;
+  }
+  .desktop {
+    display: none;
+  }
+
+  .KnobBoxTop {
+    width: 103vw;
+  }
+
+  .canvasBox {
+    /* position: relative; */
+    left: .5rem;
+    /* right: 0rem; */
+    top: 4rem;
+  }
+
+  .canvasBox2 {
+    /* border: 1px solid pink; */
+    height: 370px;
+    width: 370px;
+
+  }
+
+  /* .canvasBox2Mobile {
+    height: 400px !important;
+    width: 400px !important;
+  } */
 }

@@ -44,3 +44,17 @@
   padding: 1rem;
   max-width: 25rem;
 }
+
+@media screen and (max-width: 420px) {
+  .mobile {
+    display: inline-block;
+  }
+  .desktop {
+    display: none;
+  }
+
+  .ringInfoDisplay {
+    max-width: 20rem;
+  }
+
+}

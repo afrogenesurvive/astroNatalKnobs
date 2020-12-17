@@ -258,6 +258,11 @@ class Knob4 extends Component {
 
   componentDidMount() {
     console.log('window dimensions:', window.innerWidth, window.innerHeight);
+    let mobile = false;
+    if (window.innerWidth < 750) {
+      this.mobile = true;
+      mobile = true;
+    }
     document.addEventListener("keypress", e => {
       console.log('gotcha',e.key);
       // this.canvasListeners();
@@ -282,7 +287,17 @@ class Knob4 extends Component {
     const imgMobile2 = this.refs.imageMobile2;
     const imgMobile3 = this.refs.imageMobile3;
 
-    if (this.state.mobile === true) {
+    if (mobile === true) {
+      // let elem = document.getElementsByClassName('canvasBox2');
+      // elem[0].classList.add('canvasBox2Mobile');
+
+      canvas1.width = 160;
+      canvas2.width = 260;
+      canvas3.width = 370;
+      canvas1.height = 160;
+      canvas2.height = 260;
+      canvas3.height = 370;
+
       imgMobile3.onload=function(){
         context1.drawImage(imgMobile1,canvas1.width/2-imgMobile1.width/2,canvas1.height/2-imgMobile1.width/2);
         context2.drawImage(imgMobile2,canvas2.width/2-imgMobile2.width/2,canvas2.height/2-imgMobile2.width/2);
@@ -290,7 +305,7 @@ class Knob4 extends Component {
       }
     }
 
-    if (this.state.mobile === false) {
+    if (mobile === false) {
       img3.onload=function(){
         context1.drawImage(img1,canvas1.width/2-img1.width/2,canvas1.height/2-img1.width/2);
         context2.drawImage(img2,canvas2.width/2-img2.width/2,canvas2.height/2-img2.width/2);
@@ -339,12 +354,12 @@ class Knob4 extends Component {
 
       let elem = document.getElementsByClassName('canvasBox2');
       elem[0].classList.add('canvasBox2Mobile');
-      canvas1.width = 200;
-      canvas2.width = 300;
-      canvas3.width = 400;
-      canvas1.height = 200;
-      canvas2.height = 300;
-      canvas3.height = 400;
+      canvas1.width = 180;
+      canvas2.width = 280;
+      canvas3.width = 380;
+      canvas1.height = 180;
+      canvas2.height = 280;
+      canvas3.height = 380;
 
       const imgMobile1 = this.refs.imageMobile1;
       const imgMobile2 = this.refs.imageMobile2;
@@ -395,6 +410,7 @@ class Knob4 extends Component {
     // canvas1.removeEventListener("click", e => {});
     // canvas2.removeEventListener("click", e => {});
     // canvas3.removeEventListener("click", e => {});
+    console.log('1',canvas1.width,'2',canvas2.width,'3',canvas3.width);
 
     canvas1.addEventListener("click", e => {
       console.log('canvas click1');
@@ -451,77 +467,6 @@ class Knob4 extends Component {
         // this.setState({
         this.setClickInfo(clickInfo);
     });
-
-  }
-
-  canvasMobileListeners = () => {
-    console.log('adding mobile canvas listeners',this.mobile);
-    let canvasMobile1 = this.canvasRefMobile1.current;
-    let canvasMobile2 = this.canvasRefMobile2.current;
-    let canvasMobile3 = this.canvasRefMobile3.current;
-    console.log('soot',canvasMobile1,canvasMobile2,canvasMobile3);
-    // canvas1.removeEventListener("click", e => {});
-    // canvas2.removeEventListener("click", e => {});
-    // canvas3.removeEventListener("click", e => {});
-
-    canvasMobile1.addEventListener("click", e => {
-      console.log('canvas click mobile2');
-      // console.log('house click',e);
-        let mousePos = this.getMousePos(canvasMobile1, e);
-        // console.log('house ring',mousePos.x + ',' + mousePos.y);
-        let clickInfo = {
-          ring: 'planet',
-          ringNo: 1,
-          coords: {
-            x: mousePos.x,
-            y: mousePos.y,
-          },
-          target: '',
-          img: '',
-          desc: '',
-        }
-        // this.setState({
-        this.setClickInfo(clickInfo);
-    });
-    canvasMobile2.addEventListener("click", e => {
-      console.log('canvas click mobile2');
-      // console.log('house click',e);
-        let mousePos = this.getMousePos(canvasMobile2, e);
-        // console.log('house ring',mousePos.x + ',' + mousePos.y);
-        let clickInfo = {
-          ring: 'planet',
-          ringNo: 2,
-          coords: {
-            x: mousePos.x,
-            y: mousePos.y,
-          },
-          target: '',
-          img: '',
-          desc: '',
-        }
-        // this.setState({
-        this.setClickInfo(clickInfo);
-    });
-    canvasMobile3.addEventListener("click", e => {
-      console.log('canvas click mobile3');
-      // console.log('house click',e);
-        let mousePos = this.getMousePos(canvasMobile3, e);
-        // console.log('house ring',mousePos.x + ',' + mousePos.y);
-        let clickInfo = {
-          ring: 'house',
-          ringNo: 3,
-          coords: {
-            x: mousePos.x,
-            y: mousePos.y,
-          },
-          target: '',
-          img: '',
-          desc: '',
-        }
-        // this.setState({
-        this.setClickInfo(clickInfo);
-    });
-
 
   }
 
@@ -1205,13 +1150,13 @@ class Knob4 extends Component {
             selectedRingName={this.state.selectedRingName}
           />
 
-          
+
             <RingInfoClick
               data={this.state.ringClickInfo}
               closeClickInfo={this.closeClickInfo}
               state={this.clickInfoState}
             />
-          
+
 
 
           <div className="canvasBox">

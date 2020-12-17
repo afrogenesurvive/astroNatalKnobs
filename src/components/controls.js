@@ -41,63 +41,65 @@ const Controls = (props) => {
     return (
       <div className="controlsTop">
 
-        <ul className="controlsList">
+        <ul className="controlsList desktop">
           <li>
             <ul className="controlsSublist">
-              <li>
-              <OverlayTrigger
+            <li>
+            <OverlayTrigger
 
-                placement={'bottom'}
-                overlay={
-                  <Popover id={`popover-positioned-${'bottom'}`}>
-                    <Popover.Content>
-                      <strong>Planet</strong>
-                    </Popover.Content>
-                  </Popover>
-                }
-              >
-                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 1})}>
-                  <FontAwesomeIcon icon={faMoon} className="controlIcon" size="lg"/>
-                </Button>
-              </OverlayTrigger>
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Planet</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 1})}>
+                <FontAwesomeIcon icon={faMoon} className="controlIcon" size="lg"/>
+              </Button>
+            </OverlayTrigger>
 
-              </li>
-              <li>
-              <OverlayTrigger
+            </li>
+            <li>
+            <OverlayTrigger
 
-                placement={'bottom'}
-                overlay={
-                  <Popover id={`popover-positioned-${'bottom'}`}>
-                    <Popover.Content>
-                      <strong>Sign</strong>
-                    </Popover.Content>
-                  </Popover>
-                }
-              >
-                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 2})}>
-                  <FontAwesomeIcon icon={faSign} className="controlIcon" size="lg"/>
-                </Button>
-              </OverlayTrigger>
-              </li>
-              <li>
-              <OverlayTrigger
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Sign</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 2})}>
+                <FontAwesomeIcon icon={faSign} className="controlIcon" size="lg"/>
+              </Button>
+            </OverlayTrigger>
+            </li>
+            <li>
+            <OverlayTrigger
 
-                placement={'bottom'}
-                overlay={
-                  <Popover id={`popover-positioned-${'bottom'}`}>
-                    <Popover.Content>
-                      <strong>House</strong>
-                    </Popover.Content>
-                  </Popover>
-                }
-              >
-                <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 3})}>
-                  <FontAwesomeIcon icon={faHome} className="controlIcon" size="lg"/>
-                </Button>
-              </OverlayTrigger>
-              </li>
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>House</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 3})}>
+                <FontAwesomeIcon icon={faHome} className="controlIcon" size="lg"/>
+              </Button>
+            </OverlayTrigger>
+            </li>
+
             </ul>
           </li>
+
           {
             // <li>
             //   <ul className="controlsSublist">
@@ -124,6 +126,136 @@ const Controls = (props) => {
 
           <li>
             <ul className="controlsSublist">
+            <li>
+            <OverlayTrigger
+
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Rotate Left</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>
+              <FontAwesomeIcon icon={faStepBackward} className="controlIcon" size="lg"/>
+            </Button>
+            </OverlayTrigger>
+            </li>
+            <li>
+            <OverlayTrigger
+
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Rotate Right</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+            <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>
+              <FontAwesomeIcon icon={faStepForward} className="controlIcon" size="lg"/>
+            </Button>
+            </OverlayTrigger>
+            </li>
+            <li>
+            <OverlayTrigger
+
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Toggle Ring</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+            <Button variant="light" className="controlsBtn" onClick={props.ringToggle}>
+              <FontAwesomeIcon icon={faToggleOn} className="controlIcon" size="lg"/>
+            </Button>
+            </OverlayTrigger>
+            </li>
+            <li>
+            <OverlayTrigger
+
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Mobile View</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+            <Button variant="light" className="controlsBtn" onClick={props.toggleMobile}>
+              <FontAwesomeIcon icon={faMobile} className="controlIcon" size="lg"/>
+            </Button>
+            </OverlayTrigger>
+            </li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <ul className="controlsList mobile">
+          <li>
+            <ul className="controlsSublist">
+
+            <li>
+            <OverlayTrigger
+
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Planet</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 1})}>
+                <FontAwesomeIcon icon={faMoon} className="controlIcon" size="md"/>
+              </Button>
+            </OverlayTrigger>
+
+            </li>
+            <li>
+            <OverlayTrigger
+
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>Sign</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 2})}>
+                <FontAwesomeIcon icon={faSign} className="controlIcon" size="md"/>
+              </Button>
+            </OverlayTrigger>
+            </li>
+            <li>
+            <OverlayTrigger
+
+              placement={'bottom'}
+              overlay={
+                <Popover id={`popover-positioned-${'bottom'}`}>
+                  <Popover.Content>
+                    <strong>House</strong>
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 3})}>
+                <FontAwesomeIcon icon={faHome} className="controlIcon" size="md"/>
+              </Button>
+            </OverlayTrigger>
+            </li>
+
               <li>
               <OverlayTrigger
 
@@ -137,7 +269,7 @@ const Controls = (props) => {
                 }
               >
               <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>
-                <FontAwesomeIcon icon={faStepBackward} className="controlIcon" size="lg"/>
+                <FontAwesomeIcon icon={faStepBackward} className="controlIcon" size="md"/>
               </Button>
               </OverlayTrigger>
               </li>
@@ -154,7 +286,7 @@ const Controls = (props) => {
                 }
               >
               <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>
-                <FontAwesomeIcon icon={faStepForward} className="controlIcon" size="lg"/>
+                <FontAwesomeIcon icon={faStepForward} className="controlIcon" size="md"/>
               </Button>
               </OverlayTrigger>
               </li>
@@ -171,30 +303,12 @@ const Controls = (props) => {
                 }
               >
               <Button variant="light" className="controlsBtn" onClick={props.ringToggle}>
-                <FontAwesomeIcon icon={faToggleOn} className="controlIcon" size="lg"/>
-              </Button>
-              </OverlayTrigger>
-              </li>
-              <li>
-              <OverlayTrigger
-
-                placement={'bottom'}
-                overlay={
-                  <Popover id={`popover-positioned-${'bottom'}`}>
-                    <Popover.Content>
-                      <strong>Mobile View</strong>
-                    </Popover.Content>
-                  </Popover>
-                }
-              >
-              <Button variant="light" className="controlsBtn" onClick={props.toggleMobile}>
-                <FontAwesomeIcon icon={faMobile} className="controlIcon" size="lg"/>
+                <FontAwesomeIcon icon={faToggleOn} className="controlIcon" size="md"/>
               </Button>
               </OverlayTrigger>
               </li>
             </ul>
           </li>
-
         </ul>
 
       </div>
