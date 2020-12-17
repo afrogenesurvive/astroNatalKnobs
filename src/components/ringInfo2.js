@@ -39,6 +39,7 @@ const RingInfoClick = (props) => {
         <p>Ring: {props.data.ring} </p>
         <p>Target: {props.data.target} </p>
         <p>Desc: {props.data.desc} </p>
+        <p>Coords: {props.data.coords.x}, {props.data.coords.y} </p>
         </div>
 
 

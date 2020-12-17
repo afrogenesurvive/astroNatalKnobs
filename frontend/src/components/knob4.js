@@ -258,11 +258,7 @@ class Knob4 extends Component {
 
   componentDidMount() {
     console.log('window dimensions:', window.innerWidth, window.innerHeight);
-    let mobile = false;
-    if (window.innerWidth < 750) {
-      this.mobile = true;
-      mobile = true;
-    }
+
     document.addEventListener("keypress", e => {
       console.log('gotcha',e.key);
       // this.canvasListeners();
@@ -287,17 +283,7 @@ class Knob4 extends Component {
     const imgMobile2 = this.refs.imageMobile2;
     const imgMobile3 = this.refs.imageMobile3;
 
-    if (mobile === true) {
-      // let elem = document.getElementsByClassName('canvasBox2');
-      // elem[0].classList.add('canvasBox2Mobile');
-
-      canvas1.width = 150;
-      canvas2.width = 230;
-      canvas3.width = 365;
-      canvas1.height = 150;
-      canvas2.height = 230;
-      canvas3.height = 365;
-
+    if (this.state.mobile === true) {
       imgMobile3.onload=function(){
         context1.drawImage(imgMobile1,canvas1.width/2-imgMobile1.width/2,canvas1.height/2-imgMobile1.width/2);
         context2.drawImage(imgMobile2,canvas2.width/2-imgMobile2.width/2,canvas2.height/2-imgMobile2.width/2);
@@ -305,7 +291,7 @@ class Knob4 extends Component {
       }
     }
 
-    if (mobile === false) {
+    if (this.state.mobile === false) {
       img3.onload=function(){
         context1.drawImage(img1,canvas1.width/2-img1.width/2,canvas1.height/2-img1.width/2);
         context2.drawImage(img2,canvas2.width/2-img2.width/2,canvas2.height/2-img2.width/2);
@@ -351,14 +337,15 @@ class Knob4 extends Component {
 
     if (this.mobile === true) {
 
+
       let elem = document.getElementsByClassName('canvasBox2');
       elem[0].classList.add('canvasBox2Mobile');
-      canvas1.width = 150;
-      canvas2.width = 230;
-      canvas3.width = 365;
-      canvas1.height = 150;
-      canvas2.height = 230;
-      canvas3.height = 365;
+      canvas1.width = 200;
+      canvas2.width = 300;
+      canvas3.width = 400;
+      canvas1.height = 200;
+      canvas2.height = 300;
+      canvas3.height = 400;
 
       const imgMobile1 = this.refs.imageMobile1;
       const imgMobile2 = this.refs.imageMobile2;
@@ -406,11 +393,15 @@ class Knob4 extends Component {
     let canvas1 = this.canvasRef1.current;
     let canvas2 = this.canvasRef2.current;
     let canvas3 = this.canvasRef3.current;
+    // canvas1.removeEventListener("click", e => {});
+    // canvas2.removeEventListener("click", e => {});
+    // canvas3.removeEventListener("click", e => {});
 
     canvas1.addEventListener("click", e => {
+      console.log('canvas click1');
       // console.log('planet click',e);
         let mousePos = this.getMousePos(canvas1, e);
-        console.log('planet ring',mousePos.x + ',' + mousePos.y);
+        // console.log('planet ring',mousePos.x + ',' + mousePos.y);
         let clickInfo = {
           ring: 'planet',
           ringNo: 1,
@@ -425,9 +416,10 @@ class Knob4 extends Component {
         this.setClickInfo(clickInfo);
     });
     canvas2.addEventListener("click", e => {
+      console.log('canvas click2');
       // console.log('sign click',e);
         let mousePos = this.getMousePos(canvas2, e);
-        console.log('sign ring',mousePos.x + ',' + mousePos.y);
+        // console.log('sign ring',mousePos.x + ',' + mousePos.y);
         let clickInfo = {
           ring: 'sign',
           ringNo: 2,
@@ -442,9 +434,10 @@ class Knob4 extends Component {
         this.setClickInfo(clickInfo);
     });
     canvas3.addEventListener("click", e => {
+      console.log('canvas click3');
       // console.log('house click',e);
         let mousePos = this.getMousePos(canvas3, e);
-        console.log('house ring',mousePos.x + ',' + mousePos.y);
+        // console.log('house ring',mousePos.x + ',' + mousePos.y);
         let clickInfo = {
           ring: 'house',
           ringNo: 3,
@@ -462,11 +455,11 @@ class Knob4 extends Component {
 
   }
 
+
   setClickInfo = (args) => {
     console.log('setting click info');
 
     if (args.ring === 'house') {
-      // console.log('clickset house');
       let x = args.coords.x;
       let y = args.coords.y;
       let rad = 30;
@@ -518,7 +511,6 @@ class Knob4 extends Component {
 
     }
     if (args.ring === 'sign') {
-      // console.log('clickset sign');
       let x = args.coords.x;
       let y = args.coords.y;
       let rad = 25;
@@ -570,7 +562,6 @@ class Knob4 extends Component {
 
     }
     if (args.ring === 'planet') {
-      // console.log('clickset planet');
       let x = args.coords.x;
       let y = args.coords.y;
       let rad = 20;
@@ -624,10 +615,10 @@ class Knob4 extends Component {
     }
 
     this.setState({
-      clickInfoState: true,
+      // clickInfoState: true,
       ringClickInfo: args,
     })
-    this.clickInfoState = true;
+    // this.clickInfoState = true;
 
     // this.[this.state.selectedRingName]
 
@@ -1106,14 +1097,14 @@ class Knob4 extends Component {
     } else {
       this.setState({
         mobile: true,
-        ring1Size: 150,
-        ring2Size: 230,
-        ring3Size: 365,
+        ring1Size: 185,
+        ring2Size: 280,
+        ring3Size: 400,
       })
       this.mobile = true;
-      this.ring1Size = 150;
-      this.ring2Size = 230;
-      this.ring3Size = 365;
+      this.ring1Size = 185;
+      this.ring2Size = 280;
+      this.ring3Size = 400;
       this.init()
     }
     // window.location.reload(false);
@@ -1130,6 +1121,12 @@ class Knob4 extends Component {
 
         <div className="KnobBoxTop">
 
+        <RingInfoClick
+          data={this.state.ringClickInfo}
+          closeClickInfo={this.closeClickInfo}
+          state={this.clickInfoState}
+        />
+
           <Controls
             controlsInput={this.controlsInput}
             ringToggle={this.toggleRing}
@@ -1145,12 +1142,6 @@ class Knob4 extends Component {
             selectedRingName={this.state.selectedRingName}
           />
 
-
-            <RingInfoClick
-              data={this.state.ringClickInfo}
-              closeClickInfo={this.closeClickInfo}
-              state={this.clickInfoState}
-            />
 
 
 
