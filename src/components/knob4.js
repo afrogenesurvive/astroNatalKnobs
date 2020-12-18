@@ -69,48 +69,48 @@ class Knob4 extends Component {
     house: null,
     planetArray: [
       {value: 'empty', img: '', desc: '......'},
-      {value: 'ascendant', img: '', desc: '...The Ascendant defines, in part, the first impression we make on others in a personal rather than professional sense. It represents our physical appearance, our physical bodies and overall health, and the body ego. It is our natural and personal defense mechanisms that we use to adapt to, and cope with, our environment...'},
-      {value: 'sun', img: '', desc: '...Represents: Our identity, our ego, and what we strive to be In the chart, the position of the Sun by zodiac sign represents the native’s life purpose and the style in which they leave their mark in the world. Rules the sign of Leo. Exalted in Aries, in its detriment in Aquarius, and in its fall in Libra...'},
-      {value: 'moon', img: '', desc: '...In the natal chart, the position of the Moon by sign shows how we emote and respond to our environment, as well as our instinctual habits, especially in our homes and in private. How do we instinctively react or respond to problems? What do we feel we need for a sense of security?...'},
-      {value: 'mercury', img: '', desc: '...Mercury’s action is to take things apart and put them back together again. look to Mercury in the chart to reveal how individuals get their point across, how they study, and how they process information. Mercury by sign shows an individual’s style of communication...'},
-      {value: 'venus', img: '', desc: '...We look to Venus in the natal chart to see how we approach relationships of the heart, as well as what gives us pleasure. Venus rules attachments to others. It rules attractiveness–both the ability to attract and attraction to others (and things)...'},
-      {value: 'mars', img: '', desc: '...Mars rules our animal instincts for aggression, anger, and survival. Our sexual desires come under the rule of Mars. Mars is the push that gets us out of bed in the morning, our drive and desire nature, and our active energy. In the chart, the position of Mars by sign shows our basic sexual nature, how we express our anger (our temper), what makes us angry, and our first instinct to act...'},
-      {value: 'jupiter', img: '', desc: '...Jupiter has generally been associated with good luck and bounty. Optimism and growth (including mental and spiritual growth) come under its rule. In the chart, the position of Jupiter by sign reveals how we express our generosity and tolerance. It shows how we go about trusting others and improving our lives. Where do we look for wisdom and understanding...'},
-      {value: 'saturn', img: '', desc: '...Saturn is often associated with our fathers or father/authority figures. In the chart, the position of Saturn by sign and house reveals our own limitations, fears, and sense of responsibility. Saturn brings definition, and often limitation, to the planets it aspects...'},
-      {value: 'uranus', img: '', desc: '...The position of Uranus shows where individuals look to stir things up, put a new spin on situations, and go against established thought or order.Uranus aspecting other planets in the chart color those energies with some willfulness, quirkiness, and originality. Where we find Uranus in the chart is where we see some refusal to blend in with others (and situations), and some erratic life patterns....'},
-      {value: 'neptune', img: '', desc: '...By house, Neptune’s position shows where intuition, dreams, and psychic sensitivity come into play. Natives may be able to rise above the demands of the ego in the areas of Neptune’s influence...'},
-      {value: 'pluto', img: '', desc: '...In the chart, the position of Pluto by sign will be shared with other people in the same generation due to the comparatively slow movement of Pluto, the outermost planet, in the heavens. By house, the position of Pluto shows where individuals search for truths and deeper meaning. This area of life may be associated with change, upheaval, power struggles, and issues of control...'},
-      {value: 'north node', img: '', desc: '...The Nodes of the Moon represent points of personal karmic imbalance. The North Node represents the kinds of experiences that we must work to develop in order to work with our karma and to grow spiritually. The South Node represents those experiences and qualities that come naturally to us, that are over-developed, and that we tend to fall back on....'},
+      {value: 'ascendant', img: 'ascendant', desc: '...The Ascendant defines, in part, the first impression we make on others in a personal rather than professional sense. It represents our physical appearance, our physical bodies and overall health, and the body ego. It is our natural and personal defense mechanisms that we use to adapt to, and cope with, our environment...'},
+      {value: 'sun', img: 'sun', desc: '...Represents: Our identity, our ego, and what we strive to be In the chart, the position of the Sun by zodiac sign represents the native’s life purpose and the style in which they leave their mark in the world. Rules the sign of Leo. Exalted in Aries, in its detriment in Aquarius, and in its fall in Libra...'},
+      {value: 'moon', img: 'moon', desc: '...In the natal chart, the position of the Moon by sign shows how we emote and respond to our environment, as well as our instinctual habits, especially in our homes and in private. How do we instinctively react or respond to problems? What do we feel we need for a sense of security?...'},
+      {value: 'mercury', img: 'mercury', desc: '...Mercury’s action is to take things apart and put them back together again. look to Mercury in the chart to reveal how individuals get their point across, how they study, and how they process information. Mercury by sign shows an individual’s style of communication...'},
+      {value: 'venus', img: 'venus', desc: '...We look to Venus in the natal chart to see how we approach relationships of the heart, as well as what gives us pleasure. Venus rules attachments to others. It rules attractiveness–both the ability to attract and attraction to others (and things)...'},
+      {value: 'mars', img: 'mars', desc: '...Mars rules our animal instincts for aggression, anger, and survival. Our sexual desires come under the rule of Mars. Mars is the push that gets us out of bed in the morning, our drive and desire nature, and our active energy. In the chart, the position of Mars by sign shows our basic sexual nature, how we express our anger (our temper), what makes us angry, and our first instinct to act...'},
+      {value: 'jupiter', img: 'jupiter', desc: '...Jupiter has generally been associated with good luck and bounty. Optimism and growth (including mental and spiritual growth) come under its rule. In the chart, the position of Jupiter by sign reveals how we express our generosity and tolerance. It shows how we go about trusting others and improving our lives. Where do we look for wisdom and understanding...'},
+      {value: 'saturn', img: 'saturn', desc: '...Saturn is often associated with our fathers or father/authority figures. In the chart, the position of Saturn by sign and house reveals our own limitations, fears, and sense of responsibility. Saturn brings definition, and often limitation, to the planets it aspects...'},
+      {value: 'uranus', img: 'uranus', desc: '...The position of Uranus shows where individuals look to stir things up, put a new spin on situations, and go against established thought or order.Uranus aspecting other planets in the chart color those energies with some willfulness, quirkiness, and originality. Where we find Uranus in the chart is where we see some refusal to blend in with others (and situations), and some erratic life patterns....'},
+      {value: 'neptune', img: 'neptune', desc: '...By house, Neptune’s position shows where intuition, dreams, and psychic sensitivity come into play. Natives may be able to rise above the demands of the ego in the areas of Neptune’s influence...'},
+      {value: 'pluto', img: 'pluto', desc: '...In the chart, the position of Pluto by sign will be shared with other people in the same generation due to the comparatively slow movement of Pluto, the outermost planet, in the heavens. By house, the position of Pluto shows where individuals search for truths and deeper meaning. This area of life may be associated with change, upheaval, power struggles, and issues of control...'},
+      {value: 'north node', img: '../assets/img/infoImages/northNode.png', desc: '...The Nodes of the Moon represent points of personal karmic imbalance. The North Node represents the kinds of experiences that we must work to develop in order to work with our karma and to grow spiritually. The South Node represents those experiences and qualities that come naturally to us, that are over-developed, and that we tend to fall back on....'},
     ],
     signArray: [
       {value: 'empty', img: '', desc: '......'},
-      {value: 'aries', img: '', desc: '...aries...'},
-      {value: 'taurus', img: '', desc: '...taurus...'},
-      {value: 'gemini', img: '', desc: '...gemini...'},
-      {value: 'cancer', img: '', desc: '...cancer...'},
-      {value: 'leo', img: '', desc: '...leo...'},
-      {value: 'virgo', img: '', desc: '...virgo...'},
-      {value: 'libra', img: '', desc: '...libra...'},
-      {value: 'scorpio', img: '', desc: '...scorpio...'},
-      {value: 'sagittarius', img: '', desc: '...sagittarius...'},
-      {value: 'capricorn', img: '', desc: '...capricorn...'},
-      {value: 'aquarius', img: '', desc: '...aquarius...'},
-      {value: 'pisces', img: '', desc: '...pisces...'},
+      {value: 'aries', img: 'aries', desc: '...aries...'},
+      {value: 'taurus', img: 'taurus', desc: '...taurus...'},
+      {value: 'gemini', img: 'gemini', desc: '...gemini...'},
+      {value: 'cancer', img: 'cancer', desc: '...cancer...'},
+      {value: 'leo', img: 'leo', desc: '...leo...'},
+      {value: 'virgo', img: 'virgo', desc: '...virgo...'},
+      {value: 'libra', img: 'libra', desc: '...libra...'},
+      {value: 'scorpio', img: 'scorpio', desc: '...scorpio...'},
+      {value: 'sagittarius', img: 'sagittarius', desc: '...sagittarius...'},
+      {value: 'capricorn', img: 'capricorn', desc: '...capricorn...'},
+      {value: 'aquarius', img: 'aquarius', desc: '...aquarius...'},
+      {value: 'pisces', img: 'pisces', desc: '...pisces...'},
     ],
     houseArray: [
       {value:'empty', img: '', desc: '.......'},
-      {value:'1st', img: '', desc: '....1st...'},
-      {value:'2nd', img: '', desc: '....2nd...'},
-      {value:'3rd', img: '', desc: '....3rd...'},
-      {value:'4th', img: '', desc: '....4th...'},
-      {value:'5th', img: '', desc: '....5th...'},
-      {value:'6th', img: '', desc: '....6th...'},
-      {value:'7th', img: '', desc: '....7th...'},
-      {value:'8th', img: '', desc: '....8th...'},
-      {value:'9th', img: '', desc: '....9th...'},
-      {value:'10th', img: '', desc: '....10th...'},
-      {value:'11th', img: '', desc: '....11th...'},
-      {value:'12th', img: '', desc: '....12th...'},
+      {value:'1st', img: 'firstHouse', desc: '....1st...'},
+      {value:'2nd', img: 'secondHouse', desc: '....2nd...'},
+      {value:'3rd', img: 'thirdHouse', desc: '....3rd...'},
+      {value:'4th', img: 'fourthHouse', desc: '....4th...'},
+      {value:'5th', img: 'fifthHouse', desc: '....5th...'},
+      {value:'6th', img: 'sixthHouse', desc: '....6th...'},
+      {value:'7th', img: 'seventhHouse', desc: '....7th...'},
+      {value:'8th', img: 'eigthHouse', desc: '....8th...'},
+      {value:'9th', img: 'ninthHouse', desc: '....9th...'},
+      {value:'10th', img: 'tenthHouse', desc: '....10th...'},
+      {value:'11th', img: 'eleventhHouse', desc: '....11th...'},
+      {value:'12th', img: 'twelfthHouse', desc: '....12th...'},
     ],
     ringClickInfo: {
       ring: '',
@@ -167,46 +167,46 @@ class Knob4 extends Component {
       {house: '12th', words: ['XII1','XII2','XII3','XII4','XII5','XII6','XII7','XII8','XII9','XII10']},
     ],
     planetCoordArray: [
-      {coords: {x: 169,y: 38.5}, position: 12, mobileCoords: {x: 80, y: 19}},
+      {coords: {x: 156,y: 41}, position: 12, mobileCoords: {x: 80, y: 19}},
       {coords: {x: 102,y: 56.5}, position: 1, mobileCoords: {x: 48, y: 27}},
-      {coords: {x: 55,y: 106.5}, position: 2, mobileCoords: {x: 25, y: 50}},
-      {coords: {x: 39,y: 169.5}, position: 3, mobileCoords: {x: 17, y: 81}},
-      {coords: {x: 58,y: 230.5}, position: 4, mobileCoords: {x: 28 , y: 111}},
-      {coords: {x: 105,y: 276.5}, position: 5, mobileCoords: {x: 50, y: 133}},
-      {coords: {x: 169,y: 290.5}, position: 6, mobileCoords: {x: 81, y: 140}},
-      {coords: {x: 231,y: 275.5}, position: 7, mobileCoords: {x: 110, y: 134}},
-      {coords: {x: 276,y: 229.5}, position: 8, mobileCoords: {x: 133, y: 112}},
-      {coords: {x: 296,y: 168.5}, position: 9, mobileCoords: {x: 142, y: 81}},
-      {coords: {x: 282,y: 107.5}, position: 10, mobileCoords: {x: 133, y: 52}},
-      {coords: {x: 237.5,y: 61}, position: 11, mobileCoords: {x: 112, y: 28}},
+      {coords: {x: 55,y: 100}, position: 2, mobileCoords: {x: 25, y: 50}},
+      {coords: {x: 38,y: 159}, position: 3, mobileCoords: {x: 17, y: 81}},
+      {coords: {x: 57,y: 214}, position: 4, mobileCoords: {x: 28 , y: 111}},
+      {coords: {x: 100,y: 258}, position: 5, mobileCoords: {x: 50, y: 133}},
+      {coords: {x: 157,y: 272}, position: 6, mobileCoords: {x: 81, y: 140}},
+      {coords: {x: 213,y: 259}, position: 7, mobileCoords: {x: 110, y: 134}},
+      {coords: {x: 254,y: 219}, position: 8, mobileCoords: {x: 133, y: 112}},
+      {coords: {x: 273,y: 160}, position: 9, mobileCoords: {x: 142, y: 81}},
+      {coords: {x: 256,y: 99}, position: 10, mobileCoords: {x: 133, y: 52}},
+      {coords: {x: 219,y: 57}, position: 11, mobileCoords: {x: 112, y: 28}},
     ],
     signCoordArray: [
-      {coords: {x: 153,y: 87.5}, position: 1, mobileCoords: {x: 66, y: 38}},
-      {coords: {x: 77,y: 169.5}, position: 2, mobileCoords: {x: 31, y: 75}},
-      {coords: {x: 50,y: 270.5}, position: 3, mobileCoords: {x: 21, y: 120}},
-      {coords: {x: 84,y: 377.5}, position: 4, mobileCoords: {x: 36, y: 166}},
-      {coords: {x: 155,y: 445.5}, position: 5, mobileCoords: {x: 66, y: 198}},
-      {coords: {x: 261,y: 469.5}, position: 6, mobileCoords: {x: 112, y: 207}},
-      {coords: {x: 364,y: 442.5}, position: 7, mobileCoords: {x: 158, y: 193}},
-      {coords: {x: 443,y: 372.5}, position: 8, mobileCoords: {x: 190, y: 163}},
-      {coords: {x: 467,y: 278.5}, position: 9, mobileCoords: {x: 204, y: 112}},
-      {coords: {x: 446,y: 167.5}, position: 10, mobileCoords: {x: 193, y: 84}},
-      {coords: {x: 371,y: 85.5}, position: 11, mobileCoords: {x: 161, y: 38}},
-      {coords: {x: 263,y: 54.5}, position: 12, mobileCoords: {x: 113, y: 25}},
+      {coords: {x: 129,y: 70}, position: 1, mobileCoords: {x: 66, y: 38}},
+      {coords: {x: 58,y: 144}, position: 2, mobileCoords: {x: 31, y: 75}},
+      {coords: {x: 36,y: 233}, position: 3, mobileCoords: {x: 21, y: 120}},
+      {coords: {x: 66,y: 328}, position: 4, mobileCoords: {x: 36, y: 166}},
+      {coords: {x: 128,y: 390}, position: 5, mobileCoords: {x: 66, y: 198}},
+      {coords: {x: 224,y: 412}, position: 6, mobileCoords: {x: 112, y: 207}},
+      {coords: {x: 316,y: 385}, position: 7, mobileCoords: {x: 158, y: 193}},
+      {coords: {x: 384,y: 324}, position: 8, mobileCoords: {x: 190, y: 163}},
+      {coords: {x: 411,y: 240}, position: 9, mobileCoords: {x: 204, y: 112}},
+      {coords: {x: 388,y: 140}, position: 10, mobileCoords: {x: 193, y: 84}},
+      {coords: {x: 321,y: 67}, position: 11, mobileCoords: {x: 161, y: 38}},
+      {coords: {x: 225,y: 40}, position: 12, mobileCoords: {x: 113, y: 25}},
     ],
     houseCoordArray: [
-      {coords: {x: 221.5,y: 126}, position: 1, mobileCoords: {x: 115, y: 77}},
-      {coords: {x: 116.5,y: 240}, position: 2, mobileCoords: {x: 66, y: 125}},
-      {coords: {x: 76.5,y: 385}, position: 3, mobileCoords: {x: 51, y: 190}},
-      {coords: {x: 135.5,y: 537}, position: 4, mobileCoords: {x: 73, y: 251}},
-      {coords: {x: 235.5,y: 634}, position: 5, mobileCoords: {x: 121, y: 298}},
-      {coords: {x: 374.5,y: 663}, position: 6, mobileCoords: {x: 180, y: 309}},
-      {coords: {x: 514.5,y: 635}, position: 7, mobileCoords: {x: 242, y: 301}},
-      {coords: {x: 626.5,y: 535}, position: 8, mobileCoords: {x: 289, y: 255}},
-      {coords: {x: 668.5,y: 385}, position: 9, mobileCoords: {x: 210, y: 188}},
-      {coords: {x: 635.5,y: 239}, position: 10, mobileCoords: {x: 297, y: 122}},
-      {coords: {x: 528.5,y: 123}, position: 11, mobileCoords: {x: 250, y: 72}},
-      {coords: {x: 376.5,y: 81}, position: 12, mobileCoords: {x: 182, y: 54}},
+      {coords: {x: 183,y: 98}, position: 1, mobileCoords: {x: 115, y: 77}},
+      {coords: {x: 82,y: 202}, position: 2, mobileCoords: {x: 66, y: 125}},
+      {coords: {x: 52,y: 334}, position: 3, mobileCoords: {x: 51, y: 190}},
+      {coords: {x: 98,y: 477}, position: 4, mobileCoords: {x: 73, y: 251}},
+      {coords: {x: 192,y: 565}, position: 5, mobileCoords: {x: 121, y: 298}},
+      {coords: {x: 321,y: 590}, position: 6, mobileCoords: {x: 180, y: 309}},
+      {coords: {x: 449,y: 565}, position: 7, mobileCoords: {x: 242, y: 301}},
+      {coords: {x: 550,y: 471}, position: 8, mobileCoords: {x: 289, y: 255}},
+      {coords: {x: 589,y: 333}, position: 9, mobileCoords: {x: 210, y: 188}},
+      {coords: {x: 561,y: 194}, position: 10, mobileCoords: {x: 297, y: 122}},
+      {coords: {x: 461,y: 100}, position: 11, mobileCoords: {x: 250, y: 72}},
+      {coords: {x: 321,y: 52}, position: 12, mobileCoords: {x: 182, y: 54}},
     ],
     switch: false,
   }
@@ -248,9 +248,9 @@ class Knob4 extends Component {
     this.activeRings = [1,2,3];
     this.mobile = false;
     this.ring1Size =
-    this.ring1Size = 330;
-    this.ring2Size = 530;
-    this.ring3Size = 730;
+    this.ring1Size = 300;
+    this.ring2Size = 450;
+    this.ring3Size = 645;
   }
 
   componentDidUpdate() {
@@ -379,12 +379,12 @@ class Knob4 extends Component {
 
       let elem = document.getElementsByClassName('canvasBox2');
       elem[0].classList.remove('canvasBox2Mobile');
-      canvas1.width = 330;
-      canvas2.width = 530;
-      canvas3.width = 730;
-      canvas1.height = 330;
-      canvas2.height = 530;
-      canvas3.height = 730;
+      canvas1.width = 300;
+      canvas2.width = 450;
+      canvas3.width = 645;
+      canvas1.height = 300;
+      canvas2.height = 450;
+      canvas3.height = 645;
 
       const img1 = this.refs.image1;
       const img2 = this.refs.image2;
@@ -1115,14 +1115,14 @@ class Knob4 extends Component {
     if (this.state.mobile === true || this.mobile === true) {
       this.setState({
         mobile: false,
-        ring1Size: 330,
-        ring2Size: 530,
-        ring3Size: 730,
+        ring1Size: 300,
+        ring2Size: 450,
+        ring3Size: 645,
       })
       this.mobile = false;
-      this.ring1Size = 330;
-      this.ring2Size = 530;
-      this.ring3Size = 730;
+      this.ring1Size = 300;
+      this.ring2Size = 450;
+      this.ring3Size = 645;
       this.init()
     } else {
       this.setState({
@@ -1189,20 +1189,20 @@ class Knob4 extends Component {
 
             <div className="canvasBox2">
             <canvas
-              width="730"
-              height="730"
+              width="645"
+              height="645"
               ref={this.canvasRef3}
               className={this.state.canvasClass3}
             />
             <canvas
-              width="530"
-              height="530"
+              width="450"
+              height="450"
               ref={this.canvasRef2}
               className={this.state.canvasClass2}
             />
             <canvas
-              width="330"
-              height="330"
+              width="300"
+              height="300"
               ref={this.canvasRef1}
               className={this.state.canvasClass1}
             />

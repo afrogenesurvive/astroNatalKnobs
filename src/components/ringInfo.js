@@ -35,14 +35,17 @@ const RingInfo = (props) => {
         <ul className="ringInfoList">
           <li>
             <a href="javascript:void(0);" className="clickInfoClose">
-              <Button variant="light" className="ringCloseBtn" onClick={props.toggleRingInfo}>X</Button>
+              <Button variant="light" className="ringCloseBtn" onClick={props.toggleRingInfo}>
+                <FontAwesomeIcon icon={faTimesCircle} size="lg"/>
+              </Button>
             </a>
           </li>
-          <li>
-            <p className="ringInfoText">Selected Ring: <span className="ringInfoSpan">{props.selectedRingName}</span> </p>
-          </li>
+
 
           {
+            // <li>
+            //   <p className="ringInfoText">Selected Ring: <span className="ringInfoSpan">{props.selectedRingName}</span> </p>
+            // </li>
             // <li>
             //   {this.state.selectedRing === 1 && (
             //     <p className="ringInfoText"> Selected Ring Rotation: {this.state.rot1}</p>
