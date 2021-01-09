@@ -11,6 +11,8 @@ import '../App.css';
 import './ringInfo.css';
 import logo from '../logo.svg';
 
+// import planet, sign and house imgs
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCaretUp,
@@ -28,30 +30,19 @@ import {
 
 
 const RingInfoClick = (props) => {
-  console.log('foo',props.data.img);
 
     return (
 
       <div className="ringInfo2Top">
 
         <div>
-
-        <a href="javascript:void(0);" className="clickInfoClose">
-          <Button variant="light" className="ringClickCloseBtn" onClick={props.toggleClickInfo}>
-            <FontAwesomeIcon icon={faTimesCircle} size="lg"/>
-          </Button>
-        </a>
-
-        <img src={props.data.img} className='clickInfoImage' alt="logo" />
-        <p>{props.data.target} </p>
-        <p>Description: {props.data.desc} </p>
-        <p>Coords: {props.data.coords.x}, {props.data.coords.y} </p>
+        <p>Ring: {props.data.ring} </p>
+        <p>Target: {props.data.target} </p>
+        <p>Desc: {props.data.desc} </p>
         </div>
 
 
-
       {
-          // <p>Ring: {props.data.ring} </p>
         // <p>Coords: {props.data.coords.x}, {props.data.coords.y} </p>
         // <img src={props.data.img} className='mainKnob' alt="logo" />
 

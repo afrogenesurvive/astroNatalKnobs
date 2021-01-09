@@ -25,6 +25,43 @@ import ringToggledMobile1 from '../assets/img/ringToggledMobile1.png';
 import ringToggledMobile2 from '../assets/img/ringToggledMobile2.png';
 import ringToggledMobile3 from '../assets/img/ringToggledMobile3.png';
 
+import firstHouseImg from '../assets/img/infoImages/1stHouse.png';
+import secondHouseImg from '../assets/img/infoImages/2ndHouse.png';
+import thirdHouseImg from '../assets/img/infoImages/3rdHouse.png';
+import fourthHouseImg from '../assets/img/infoImages/4thHouse.png';
+import fifthHouseImg from '../assets/img/infoImages/5thHouse.png';
+import sixthHouseImg from '../assets/img/infoImages/6thHouse.png';
+import seventhHouseImg from '../assets/img/infoImages/7thHouse.png';
+import eigthHouseImg from '../assets/img/infoImages/8thHouse.png';
+import ninthHouseImg from '../assets/img/infoImages/9thHouse.png';
+import tenthHouseImg from '../assets/img/infoImages/10thHouse.png';
+import eleventhHouseImg from '../assets/img/infoImages/11thHouse.png';
+import twelfthHouseImg from '../assets/img/infoImages/12thHouse.png';
+import aquariusImg from '../assets/img/infoImages/aquarius.png';
+import ariesImg from '../assets/img/infoImages/aries.png';
+import taurusImg from '../assets/img/infoImages/taurus.png';
+import geminiImg from '../assets/img/infoImages/gemini.png';
+import cancerImg from '../assets/img/infoImages/cancer.png';
+import leoImg from '../assets/img/infoImages/leo.png';
+import virgoImg from '../assets/img/infoImages/virgo.png';
+import libraImg from '../assets/img/infoImages/libra.png';
+import scorpioImg from '../assets/img/infoImages/scorpio.png';
+import sagittariusImg from '../assets/img/infoImages/sagittarius.png';
+import capricornImg from '../assets/img/infoImages/capricorn.png';
+import piscesImg from '../assets/img/infoImages/pisces.png';
+import ascendantImg from '../assets/img/infoImages/ascendant.png';
+import sunImg from '../assets/img/infoImages/sun.png';
+import moonImg from '../assets/img/infoImages/moon.png';
+import mercuryImg from '../assets/img/infoImages/mercury.png';
+import venusImg from '../assets/img/infoImages/venus.png';
+import marsImg from '../assets/img/infoImages/mars.png';
+import jupiterImg from '../assets/img/infoImages/jupiter.png';
+import saturnImg from '../assets/img/infoImages/saturn.png';
+import uranusImg from '../assets/img/infoImages/uranus.png';
+import neptuneImg from '../assets/img/infoImages/neptune.png';
+import plutoImg from '../assets/img/infoImages/pluto.png';
+import northNodeImg from '../assets/img/infoImages/northNode.png';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCaretUp,
@@ -69,48 +106,48 @@ class Knob4 extends Component {
     house: null,
     planetArray: [
       {value: 'empty', img: '', desc: '......'},
-      {value: 'ascendant', img: 'ascendant', desc: '...The Ascendant defines, in part, the first impression we make on others in a personal rather than professional sense. It represents our physical appearance, our physical bodies and overall health, and the body ego. It is our natural and personal defense mechanisms that we use to adapt to, and cope with, our environment...'},
-      {value: 'sun', img: 'sun', desc: '...Represents: Our identity, our ego, and what we strive to be In the chart, the position of the Sun by zodiac sign represents the native’s life purpose and the style in which they leave their mark in the world. Rules the sign of Leo. Exalted in Aries, in its detriment in Aquarius, and in its fall in Libra...'},
-      {value: 'moon', img: 'moon', desc: '...In the natal chart, the position of the Moon by sign shows how we emote and respond to our environment, as well as our instinctual habits, especially in our homes and in private. How do we instinctively react or respond to problems? What do we feel we need for a sense of security?...'},
-      {value: 'mercury', img: 'mercury', desc: '...Mercury’s action is to take things apart and put them back together again. look to Mercury in the chart to reveal how individuals get their point across, how they study, and how they process information. Mercury by sign shows an individual’s style of communication...'},
-      {value: 'venus', img: 'venus', desc: '...We look to Venus in the natal chart to see how we approach relationships of the heart, as well as what gives us pleasure. Venus rules attachments to others. It rules attractiveness–both the ability to attract and attraction to others (and things)...'},
-      {value: 'mars', img: 'mars', desc: '...Mars rules our animal instincts for aggression, anger, and survival. Our sexual desires come under the rule of Mars. Mars is the push that gets us out of bed in the morning, our drive and desire nature, and our active energy. In the chart, the position of Mars by sign shows our basic sexual nature, how we express our anger (our temper), what makes us angry, and our first instinct to act...'},
-      {value: 'jupiter', img: 'jupiter', desc: '...Jupiter has generally been associated with good luck and bounty. Optimism and growth (including mental and spiritual growth) come under its rule. In the chart, the position of Jupiter by sign reveals how we express our generosity and tolerance. It shows how we go about trusting others and improving our lives. Where do we look for wisdom and understanding...'},
-      {value: 'saturn', img: 'saturn', desc: '...Saturn is often associated with our fathers or father/authority figures. In the chart, the position of Saturn by sign and house reveals our own limitations, fears, and sense of responsibility. Saturn brings definition, and often limitation, to the planets it aspects...'},
-      {value: 'uranus', img: 'uranus', desc: '...The position of Uranus shows where individuals look to stir things up, put a new spin on situations, and go against established thought or order.Uranus aspecting other planets in the chart color those energies with some willfulness, quirkiness, and originality. Where we find Uranus in the chart is where we see some refusal to blend in with others (and situations), and some erratic life patterns....'},
-      {value: 'neptune', img: 'neptune', desc: '...By house, Neptune’s position shows where intuition, dreams, and psychic sensitivity come into play. Natives may be able to rise above the demands of the ego in the areas of Neptune’s influence...'},
-      {value: 'pluto', img: 'pluto', desc: '...In the chart, the position of Pluto by sign will be shared with other people in the same generation due to the comparatively slow movement of Pluto, the outermost planet, in the heavens. By house, the position of Pluto shows where individuals search for truths and deeper meaning. This area of life may be associated with change, upheaval, power struggles, and issues of control...'},
-      {value: 'north node', img: '../assets/img/infoImages/northNode.png', desc: '...The Nodes of the Moon represent points of personal karmic imbalance. The North Node represents the kinds of experiences that we must work to develop in order to work with our karma and to grow spiritually. The South Node represents those experiences and qualities that come naturally to us, that are over-developed, and that we tend to fall back on....'},
+      {value: 'ascendant', img: ascendantImg, desc: '...The Ascendant defines, in part, the first impression we make on others in a personal rather than professional sense. It represents our physical appearance, our physical bodies and overall health, and the body ego. It is our natural and personal defense mechanisms that we use to adapt to, and cope with, our environment...'},
+      {value: 'sun', img: sunImg, desc: '...Represents: Our identity, our ego, and what we strive to be In the chart, the position of the Sun by zodiac sign represents the native’s life purpose and the style in which they leave their mark in the world. Rules the sign of Leo. Exalted in Aries, in its detriment in Aquarius, and in its fall in Libra...'},
+      {value: 'moon', img: moonImg, desc: '...In the natal chart, the position of the Moon by sign shows how we emote and respond to our environment, as well as our instinctual habits, especially in our homes and in private. How do we instinctively react or respond to problems? What do we feel we need for a sense of security?...'},
+      {value: 'mercury', img: mercuryImg, desc: '...Mercury’s action is to take things apart and put them back together again. look to Mercury in the chart to reveal how individuals get their point across, how they study, and how they process information. Mercury by sign shows an individual’s style of communication...'},
+      {value: 'venus', img: venusImg, desc: '...We look to Venus in the natal chart to see how we approach relationships of the heart, as well as what gives us pleasure. Venus rules attachments to others. It rules attractiveness–both the ability to attract and attraction to others (and things)...'},
+      {value: 'mars', img: marsImg, desc: '...Mars rules our animal instincts for aggression, anger, and survival. Our sexual desires come under the rule of Mars. Mars is the push that gets us out of bed in the morning, our drive and desire nature, and our active energy. In the chart, the position of Mars by sign shows our basic sexual nature, how we express our anger (our temper), what makes us angry, and our first instinct to act...'},
+      {value: 'jupiter', img: jupiterImg, desc: '...Jupiter has generally been associated with good luck and bounty. Optimism and growth (including mental and spiritual growth) come under its rule. In the chart, the position of Jupiter by sign reveals how we express our generosity and tolerance. It shows how we go about trusting others and improving our lives. Where do we look for wisdom and understanding...'},
+      {value: 'saturn', img: saturnImg, desc: '...Saturn is often associated with our fathers or father/authority figures. In the chart, the position of Saturn by sign and house reveals our own limitations, fears, and sense of responsibility. Saturn brings definition, and often limitation, to the planets it aspects...'},
+      {value: 'uranus', img: uranusImg, desc: '...The position of Uranus shows where individuals look to stir things up, put a new spin on situations, and go against established thought or order.Uranus aspecting other planets in the chart color those energies with some willfulness, quirkiness, and originality. Where we find Uranus in the chart is where we see some refusal to blend in with others (and situations), and some erratic life patterns....'},
+      {value: 'neptune', img: neptuneImg, desc: '...By house, Neptune’s position shows where intuition, dreams, and psychic sensitivity come into play. Natives may be able to rise above the demands of the ego in the areas of Neptune’s influence...'},
+      {value: 'pluto', img: plutoImg, desc: '...In the chart, the position of Pluto by sign will be shared with other people in the same generation due to the comparatively slow movement of Pluto, the outermost planet, in the heavens. By house, the position of Pluto shows where individuals search for truths and deeper meaning. This area of life may be associated with change, upheaval, power struggles, and issues of control...'},
+      {value: 'north node', img: northNodeImg, desc: '...The Nodes of the Moon represent points of personal karmic imbalance. The North Node represents the kinds of experiences that we must work to develop in order to work with our karma and to grow spiritually. The South Node represents those experiences and qualities that come naturally to us, that are over-developed, and that we tend to fall back on....'},
     ],
     signArray: [
       {value: 'empty', img: '', desc: '......'},
-      {value: 'aries', img: 'aries', desc: '...aries...'},
-      {value: 'taurus', img: 'taurus', desc: '...taurus...'},
-      {value: 'gemini', img: 'gemini', desc: '...gemini...'},
-      {value: 'cancer', img: 'cancer', desc: '...cancer...'},
-      {value: 'leo', img: 'leo', desc: '...leo...'},
-      {value: 'virgo', img: 'virgo', desc: '...virgo...'},
-      {value: 'libra', img: 'libra', desc: '...libra...'},
-      {value: 'scorpio', img: 'scorpio', desc: '...scorpio...'},
-      {value: 'sagittarius', img: 'sagittarius', desc: '...sagittarius...'},
-      {value: 'capricorn', img: 'capricorn', desc: '...capricorn...'},
-      {value: 'aquarius', img: 'aquarius', desc: '...aquarius...'},
-      {value: 'pisces', img: 'pisces', desc: '...pisces...'},
+      {value: 'aries', img: ariesImg, desc: '...aries...'},
+      {value: 'taurus', img: taurusImg, desc: '...taurus...'},
+      {value: 'gemini', img: geminiImg, desc: '...gemini...'},
+      {value: 'cancer', img: cancerImg, desc: '...cancer...'},
+      {value: 'leo', img: leoImg, desc: '...leo...'},
+      {value: 'virgo', img: virgoImg, desc: '...virgo...'},
+      {value: 'libra', img: libraImg, desc: '...libra...'},
+      {value: 'scorpio', img: scorpioImg, desc: '...scorpio...'},
+      {value: 'sagittarius', img: sagittariusImg, desc: '...sagittarius...'},
+      {value: 'capricorn', img: capricornImg, desc: '...capricorn...'},
+      {value: 'aquarius', img: aquariusImg, desc: '...aquarius...'},
+      {value: 'pisces', img: piscesImg, desc: '...pisces...'},
     ],
     houseArray: [
       {value:'empty', img: '', desc: '.......'},
-      {value:'1st', img: 'firstHouse', desc: '....1st...'},
-      {value:'2nd', img: 'secondHouse', desc: '....2nd...'},
-      {value:'3rd', img: 'thirdHouse', desc: '....3rd...'},
-      {value:'4th', img: 'fourthHouse', desc: '....4th...'},
-      {value:'5th', img: 'fifthHouse', desc: '....5th...'},
-      {value:'6th', img: 'sixthHouse', desc: '....6th...'},
-      {value:'7th', img: 'seventhHouse', desc: '....7th...'},
-      {value:'8th', img: 'eigthHouse', desc: '....8th...'},
-      {value:'9th', img: 'ninthHouse', desc: '....9th...'},
-      {value:'10th', img: 'tenthHouse', desc: '....10th...'},
-      {value:'11th', img: 'eleventhHouse', desc: '....11th...'},
-      {value:'12th', img: 'twelfthHouse', desc: '....12th...'},
+      {value:'1st', img: firstHouseImg, desc: '....The first house begins the zodiac, and covers the all “firsts”: first impressions, the self and appearance, leadership, new initiatives, fresh starts and beginnings. The sign on the cusp, or starting edge, of this house, is referred to as your rising sign or ascendant....'},
+      {value:'2nd', img: secondHouseImg, desc: '....The second house covers all matters related to your immediate material and physical environment—taste, smells, sound, touch, sights. The second house also rules income, money, and self-esteem...'},
+      {value:'3rd', img: thirdHouseImg, desc: '....3rd...'},
+      {value:'4th', img: fourthHouseImg, desc: '....4th...'},
+      {value:'5th', img: fifthHouseImg, desc: '....5th...'},
+      {value:'6th', img: sixthHouseImg, desc: '....6th...'},
+      {value:'7th', img: seventhHouseImg, desc: '....7th...'},
+      {value:'8th', img: eigthHouseImg, desc: '....8th...'},
+      {value:'9th', img: ninthHouseImg, desc: '....9th...'},
+      {value:'10th', img: tenthHouseImg, desc: '....10th...'},
+      {value:'11th', img: eleventhHouseImg, desc: '....11th...'},
+      {value:'12th', img: twelfthHouseImg, desc: '....12th...'},
     ],
     ringClickInfo: {
       ring: '',
@@ -954,6 +991,24 @@ class Knob4 extends Component {
       sign: {state: false, interp: ''},
       house: {state: false, interp: ''},
     };
+    let thisInterpretation2 = {
+      planet: {state: false, interp: {
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+      }},
+      sign: {state: false, interp: {
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+      }},
+      house: {state: false, interp: {
+        a: '',
+        b: '',
+      }},
+    };
 
     for (const elem of toInterpret) {
       if (elem.type === 'planet') {
@@ -974,6 +1029,7 @@ class Knob4 extends Component {
           }
         }
         thisInterpretation.planet.state = true;
+        thisInterpretation2.planet.state = true;
       }
       if (elem.type === 'sign') {
 
@@ -994,6 +1050,7 @@ class Knob4 extends Component {
           }
         }
         thisInterpretation.sign.state = true;
+        thisInterpretation2.sign.state = true;
       }
       if (elem.type === 'house') {
 
@@ -1014,21 +1071,33 @@ class Knob4 extends Component {
           }
         }
         thisInterpretation.house.state = true;
+        thisInterpretation2.house.state = true;
       }
 
     }
 
     console.log('...finalInterpretation...',interpretation);
     if (thisInterpretation.planet.state === true ) {
-      thisInterpretation.planet.interp = `Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}...`
+      thisInterpretation.planet.interp = `Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}...`;
+      thisInterpretation2.planet.interp.a = `Your`;
+      thisInterpretation2.planet.interp.b = `{interpretation[0].val}:`;
+      thisInterpretation2.planet.interp.c = `which represents`;
+      thisInterpretation2.planet.interp.d = `${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}...`;
     }
     if (thisInterpretation.sign.state === true ) {
-      thisInterpretation.sign.interp = `Being in ${interpretation[1].val}: has the qualities of ${interpretation[1].values[0][0]}, ${interpretation[1].values[0][1]}, ${interpretation[1].values[0][3]}...`
+      thisInterpretation.sign.interp = `Being in ${interpretation[1].val}: has the qualities of ${interpretation[1].values[0][0]}, ${interpretation[1].values[0][1]}, ${interpretation[1].values[0][3]}...`;
+      thisInterpretation2.sign.interp.a = ``;
+      thisInterpretation2.sign.interp.b = ``;
+      thisInterpretation2.sign.interp.c = ``;
+      thisInterpretation2.sign.interp.d = ``;
     }
     if (thisInterpretation.house.state === true ) {
-      thisInterpretation.house.interp = `particularly in these areas of life ${interpretation[2].values[0][0]}, ${interpretation[2].values[0][1]}, ${interpretation[2].values[0][3]}...`
+      thisInterpretation.house.interp = `particularly in these areas of life ${interpretation[2].values[0][0]}, ${interpretation[2].values[0][1]}, ${interpretation[2].values[0][3]}...`;
+      thisInterpretation2.house.interp.a = ``;
+      thisInterpretation2.house.interp.b = ``;
     }
     this.interpretation = thisInterpretation;
+    // this.interpretation = thisInterpretation2;
 
     // this.interpretation =`
     //   Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}... \n

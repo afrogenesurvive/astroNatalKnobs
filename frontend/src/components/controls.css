@@ -1,0 +1,43 @@
+.controlsTop {
+  /* margin: 3rem 0; */
+  z-index: 3;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  max-width: 15rem;
+  /* border-top: 1px solid #ffffff; */
+}
+
+.controlsList {
+    /* display: flex; */
+    /* align-items: stretch; */
+    /* justify-content: space-between; */
+    /* width: 100%; */
+    /* margin: 0; */
+    padding: 0;
+    text-align: left;
+}
+.controlsList > li {
+    /* display: block; */
+    /* flex: 0 1 auto; */
+    list-style-type: none;
+    /* margin: 0 .5rem; */
+    margin: 1rem 0;
+}
+
+.controlsSublist {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.controlsSublist > li {
+    display: block;
+    flex: 0 1 auto;
+    list-style-type: none;
+    margin: 0 .5rem;
+    /* margin: 1rem 0; */
+}
