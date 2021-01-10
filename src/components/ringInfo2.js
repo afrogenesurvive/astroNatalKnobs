@@ -60,7 +60,7 @@ const RingInfoClick = (props) => {
           <p class="ringInfoText">{props.data.target} </p>
         )}
 
-        <p class="ringInfoText">Description: {props.data.desc} </p>
+        <p class="ringInfoText"> {props.data.desc} </p>
         </div>
       )}
 
