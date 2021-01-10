@@ -1,12 +1,13 @@
 .ringInfoDisplay {
   /* border: 1px solid yellow; */
   border-radius: 5px;
-  border: 2px solid black;
+  border: 2px solid #ffffff;
   /* width: 80%; */
   max-width: 30rem;
   margin: 0 auto;
   padding: 1rem;
-  background-color: #ffffff;
+  background-color: rgba(0,0,0,.95);
+  /* background-color: #ffffff; */
   position: absolute;
   left: 2rem;
   top: 9rem;
@@ -30,7 +31,8 @@
 }
 
 .ringInfoText {
-  /* color: #ffffff; */
+  color: #ffffff;
+  /* font-size: 1.2rem; */
 }
 .ringInfoSpan {
   text-decoration: underline;
@@ -41,9 +43,10 @@
   position: absolute;
   bottom: 2rem;
   left: 2rem;
-  background-color: #ffffff;
+  background-color: rgba(0,0,0,.95);
+  /* background-color: #ffffff; */
   border-radius: 5px;
-  border: 2px solid black;
+  border: 2px solid #ffffff;
   padding: 1rem;
   max-width: 30rem;
   min-width: 12rem;
@@ -56,6 +59,37 @@
   top: .5rem;
 }
 
+.clickInfoImage {
+  margin: 1rem;
+}
+.interpretation {
+  display: inline-block;
+  margin: 3px;
+  /* font-size: 1.2rem; */
+}
+
+.ul {
+  text-decoration: underline;
+}
+.bld {
+  font-weight: bolder;
+}
+.m1 {
+  margin: 1rem;
+}
+
+.top3 {
+  display: inline-block;
+}
+.top2 {
+  margin-right: 1rem;
+}
+
+.interpList {
+  /* display: flex; */
+}
+
+
 @media screen and (max-width: 420px) {
   .mobile {
     display: inline-block;
@@ -66,15 +100,24 @@
 
   .ringInfoDisplay {
     max-width: 20rem;
-    top: 32rem;
+    top: 29rem;
     height: 20rem;
     overflow: scroll;
   }
 
   .ringInfo2Top {
-    bottom: -6rem;
+    /* bottom: -6rem; */
+    top: 30rem;
     height: 20rem;
     overflow: scroll;
+  }
+
+  .interpretation {
+    /* font-size: 1rem; */
+  }
+
+  .top3 {
+    display: block;
   }
 
 }

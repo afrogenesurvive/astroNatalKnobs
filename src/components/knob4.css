@@ -3,7 +3,10 @@
 }
 
 .KnobBoxTop {
-  background-color: #282c34;
+  background-image: url('../assets/img/bg1.jpg');
+  background-size: cover;
+  /* background-position-y: -50rem; */
+  /* background-color: #282c34; */
   min-height: 110vh;
   display: flex;
   flex-direction: column;
@@ -106,6 +109,7 @@ canvas {
 .pointerBox {
   /* border: 1px solid #ffffff; */
   text-align: center;
+  /* height: 3.5rem; */
 }
 .pointerIcon {
   color: #ffffff;
@@ -156,8 +160,14 @@ canvas {
   }
 
   .KnobBoxTop {
-    width: 110vw;
-    min-height: 120vh;
+    width: 106vw;
+    min-height: 109vh;
+  }
+
+  .KnobBoxTop {
+    background-image: url('../assets/img/bg1.jpg') !important;
+    background-size: cover !important;
+    background-position-y: center;
   }
 
   .canvasBox {
@@ -172,6 +182,10 @@ canvas {
     height: 370px;
     width: 370px;
 
+  }
+
+  .pointerBox {
+    height: 2.5rem;
   }
 
   /* .canvasBox2Mobile {

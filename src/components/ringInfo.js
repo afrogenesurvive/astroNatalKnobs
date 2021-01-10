@@ -72,20 +72,27 @@ const RingInfo = (props) => {
 
           }
           <li>
-            <p className="ringInfoText">Planet: <span className="ringInfoSpan">{props.planet}</span> </p>
+            <p className="ringInfoText top3 top2">Planet: <span className="ringInfoSpan">{props.planet}</span> </p>
+            <p className="ringInfoText top3 top2">Sign: <span className="ringInfoSpan">{props.sign}</span> </p>
+            <p className="ringInfoText top3">House: <span className="ringInfoSpan">{props.house}</span> </p>
           </li>
-          <li>
-            <p className="ringInfoText">Sign: <span className="ringInfoSpan">{props.sign}</span> </p>
-          </li>
-          <li>
-            <p className="ringInfoText">House: <span className="ringInfoSpan">{props.house}</span> </p>
-          </li>
+
 
           <li>
             <p className="ringInfoText">Interpretation: </p>
           </li>
 
           {
+
+            // <li>
+            //   <p className="ringInfoText top3">Sign: <span className="ringInfoSpan">{props.sign}</span> </p>
+            // </li>
+            // <li>
+            //   <p className="ringInfoText top3">House: <span className="ringInfoSpan">{props.house}</span> </p>
+            // </li>
+
+
+
             // {props.interpretation.planet.state === true && (
             //   <li>
             //     <p className="ringInfoText">{props.interpretation.planet.interp}</p>
@@ -101,21 +108,38 @@ const RingInfo = (props) => {
             //     <p className="ringInfoText">{props.interpretation.house.interp}</p>
             //   </li>
             // )}
+
+            // <p className="ringInfoText interpretation bld ">{props.interpretation.planet.interp.d} </p>
+            // <p className="ringInfoText interpretation bld ">{props.interpretation.sign.interp.d} </p>
+            // <p className="ringInfoText interpretation bld ">{props.interpretation.house.interp.b} </p>
           }
 
           {props.interpretation.planet.state === true && (
             <li>
-              <p className="ringInfoText">{props.interpretation.planet.interp}</p>
+              <p className="ringInfoText interpretation ">{props.interpretation.planet.interp.a} </p>
+              <p className="ringInfoText interpretation bld ul">{props.interpretation.planet.interp.b} </p>
+              <p className="ringInfoText interpretation ">{props.interpretation.planet.interp.c} </p>
+              {props.interpretation.planet.interp.d.map((term) => (
+                <p className="ringInfoText interpretation bld ul">{term}</p>
+              ))}
             </li>
           )}
           {props.interpretation.sign.state === true && (
             <li>
-              <p className="ringInfoText">{props.interpretation.sign.interp}</p>
+            <p className="ringInfoText interpretation ">{props.interpretation.sign.interp.a} </p>
+            <p className="ringInfoText interpretation bld ul">{props.interpretation.sign.interp.b} </p>
+            <p className="ringInfoText interpretation ">{props.interpretation.sign.interp.c} </p>
+            {props.interpretation.sign.interp.d.map((term) => (
+              <p className="ringInfoText interpretation bld ul">{term}</p>
+            ))}
             </li>
           )}
           {props.interpretation.house.state === true && (
             <li>
-              <p className="ringInfoText">{props.interpretation.house.interp}</p>
+            <p className="ringInfoText interpretation ">{props.interpretation.house.interp.a} </p>
+            {props.interpretation.house.interp.b.map((term) => (
+              <p className="ringInfoText interpretation bld ul">{term}</p>
+            ))}
             </li>
           )}
 

@@ -86,7 +86,7 @@ class Knob4 extends Component {
 
   state = {
     mobile: false,
-    ringSizes: [0,330,530,730],
+    ringSizes: [0,300,450,645],
     ring1Size: 330,
     ring2Size: 530,
     ring3Size: 730,
@@ -159,7 +159,7 @@ class Knob4 extends Component {
       img: '',
       desc: '',
     },
-    clickInfoState: false,
+    clickInfoState: true,
     ringInfoState: true,
     planetInterpArray: [
       {planet: 'ascendant', words: ['asc1','asc2','asc3','asc4','asc5','asc6','asc7','asc8','asc9','asc10'] },
@@ -502,6 +502,20 @@ class Knob4 extends Component {
 
   setClickInfo = (args) => {
     console.log('setting click info');
+    this.setState({
+      // clickInfoState: false,
+      ringClickInfo: {
+        ring: '',
+        coords: {
+          x: '',
+          y: '',
+        },
+        target: '',
+        img: 'empty',
+        desc: '',
+      }
+    })
+    // this.clickInfoState = false;
 
     if (args.ring === 'house') {
       // console.log('clickset house');
@@ -550,6 +564,12 @@ class Knob4 extends Component {
           args.target = this.state.[args.ring+'Array'][index].value;
           args.desc = this.state.[args.ring+'Array'][index].desc;
           args.img = this.state.[args.ring+'Array'][index].img;
+
+          this.setState({
+            clickInfoState: true,
+            ringClickInfo: args,
+          })
+          this.clickInfoState = true;
 
         }
       }
@@ -602,6 +622,12 @@ class Knob4 extends Component {
           args.target = this.state.[args.ring+'Array'][index].value;
           args.desc = this.state.[args.ring+'Array'][index].desc;
           args.img = this.state.[args.ring+'Array'][index].img;
+
+          this.setState({
+            clickInfoState: true,
+            ringClickInfo: args,
+          })
+          this.clickInfoState = true;
 
         }
       }
@@ -656,16 +682,22 @@ class Knob4 extends Component {
           args.desc = this.state.[args.ring+'Array'][index].desc;
           args.img = this.state.[args.ring+'Array'][index].img;
 
+          this.setState({
+            clickInfoState: true,
+            ringClickInfo: args,
+          })
+          this.clickInfoState = true;
+
         }
       }
 
     }
 
-    this.setState({
-      clickInfoState: true,
-      ringClickInfo: args,
-    })
-    this.clickInfoState = true;
+    // this.setState({
+    //   clickInfoState: true,
+    //   ringClickInfo: args,
+    // })
+    // this.clickInfoState = true;
 
     // this.[this.state.selectedRingName]
 
@@ -1018,7 +1050,7 @@ class Knob4 extends Component {
           if (item.planet === elem.value) {
             let dictionary = item.words;
             dictionary = dictionary.sort(() => Math.random() - 0.5);
-            let selection = dictionary.slice(0,4);
+            let selection = dictionary.slice(0,7);
 
             for (const interpElem of interpretation) {
               if (interpElem.key === 'planet') {
@@ -1039,7 +1071,7 @@ class Knob4 extends Component {
           if (item.sign === elem.value) {
             let dictionary = item.words;
             dictionary = dictionary.sort(() => Math.random() - 0.5);
-            let selection = dictionary.slice(0,4);
+            let selection = dictionary.slice(0,7);
 
             for (const interpElem of interpretation) {
               if (interpElem.key === 'sign') {
@@ -1060,7 +1092,7 @@ class Knob4 extends Component {
           if (item.house === elem.value) {
             let dictionary = item.words;
             dictionary = dictionary.sort(() => Math.random() - 0.5);
-            let selection = dictionary.slice(0,4);
+            let selection = dictionary.slice(0,7);
 
             for (const interpElem of interpretation) {
               if (interpElem.key === 'house') {
@@ -1079,25 +1111,25 @@ class Knob4 extends Component {
     console.log('...finalInterpretation...',interpretation);
     if (thisInterpretation.planet.state === true ) {
       thisInterpretation.planet.interp = `Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}...`;
-      thisInterpretation2.planet.interp.a = `Your`;
-      thisInterpretation2.planet.interp.b = `{interpretation[0].val}:`;
-      thisInterpretation2.planet.interp.c = `which represents`;
-      thisInterpretation2.planet.interp.d = `${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}...`;
+      thisInterpretation2.planet.interp.a = 'Your ';
+      thisInterpretation2.planet.interp.b = ' '+interpretation[0].val+' ';
+      thisInterpretation2.planet.interp.c = 'which represents' ;
+      thisInterpretation2.planet.interp.d = [interpretation[0].values[0][0],interpretation[0].values[0][1],interpretation[0].values[0][2],interpretation[0].values[0][3],interpretation[0].values[0][4],interpretation[0].values[0][5],interpretation[0].values[0][6]];
     }
     if (thisInterpretation.sign.state === true ) {
       thisInterpretation.sign.interp = `Being in ${interpretation[1].val}: has the qualities of ${interpretation[1].values[0][0]}, ${interpretation[1].values[0][1]}, ${interpretation[1].values[0][3]}...`;
-      thisInterpretation2.sign.interp.a = ``;
-      thisInterpretation2.sign.interp.b = ``;
-      thisInterpretation2.sign.interp.c = ``;
-      thisInterpretation2.sign.interp.d = ``;
+      thisInterpretation2.sign.interp.a = 'Being in ';
+      thisInterpretation2.sign.interp.b = ' '+interpretation[1].val+' ';
+      thisInterpretation2.sign.interp.c =  ': has the qualities of ';
+      thisInterpretation2.sign.interp.d = [interpretation[1].values[0][0],interpretation[1].values[0][1],interpretation[1].values[0][2],interpretation[1].values[0][3],interpretation[1].values[0][4],interpretation[1].values[0][5],interpretation[1].values[0][6]];
     }
     if (thisInterpretation.house.state === true ) {
       thisInterpretation.house.interp = `particularly in these areas of life ${interpretation[2].values[0][0]}, ${interpretation[2].values[0][1]}, ${interpretation[2].values[0][3]}...`;
-      thisInterpretation2.house.interp.a = ``;
-      thisInterpretation2.house.interp.b = ``;
+      thisInterpretation2.house.interp.a = ' particularly in these areas of life ';
+      thisInterpretation2.house.interp.b = [interpretation[2].values[0][0],interpretation[2].values[0][1],interpretation[2].values[0][2],interpretation[2].values[0][3],interpretation[2].values[0][4],interpretation[2].values[0][5],interpretation[2].values[0][6]];
     }
-    this.interpretation = thisInterpretation;
-    // this.interpretation = thisInterpretation2;
+    // this.interpretation = thisInterpretation;
+    this.interpretation = thisInterpretation2;
 
     // this.interpretation =`
     //   Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}... \n

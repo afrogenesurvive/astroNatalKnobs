@@ -24,18 +24,31 @@ import {
   faArchive,
   faExternalLinkAlt,
   faEllipsisH,
+  faQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 
 
 const RingInfoClick = (props) => {
-  console.log('foo',props.data.img);
-
     return (
 
       <div className="ringInfo2Top">
 
+      {props.data.target === "" && (
         <div>
+        <a href="javascript:void(0);" className="clickInfoClose">
+          <Button variant="light" className="ringClickCloseBtn" onClick={props.toggleClickInfo}>
+            <FontAwesomeIcon icon={faTimesCircle} size="lg"/>
+          </Button>
+        </a>
 
+        <FontAwesomeIcon icon={faQuestion} size="3x" color="white"/>
+
+        <p class="ringInfoText m1">Click a Glyph for to learn more </p>
+
+        </div>
+      )}
+      {props.data.target !== "" && (
+        <div>
         <a href="javascript:void(0);" className="clickInfoClose">
           <Button variant="light" className="ringClickCloseBtn" onClick={props.toggleClickInfo}>
             <FontAwesomeIcon icon={faTimesCircle} size="lg"/>
@@ -43,11 +56,13 @@ const RingInfoClick = (props) => {
         </a>
 
         <img src={props.data.img} className='clickInfoImage' alt="logo" />
-        <p>{props.data.target} </p>
-        <p>Description: {props.data.desc} </p>
-        <p>Coords: {props.data.coords.x}, {props.data.coords.y} </p>
-        </div>
+        {props.data.ring !== 'house' && (
+          <p class="ringInfoText">{props.data.target} </p>
+        )}
 
+        <p class="ringInfoText">Description: {props.data.desc} </p>
+        </div>
+      )}
 
 
       {
@@ -55,12 +70,10 @@ const RingInfoClick = (props) => {
         // <p>Coords: {props.data.coords.x}, {props.data.coords.y} </p>
         // <img src={props.data.img} className='mainKnob' alt="logo" />
 
-
         // <a href="javascript:void(0);">
         //   <Button variant="light" className="ringClickCloseBtn" onClick={props.closeClickInfo()}>close</Button>
         // </a>
       }
-
 
       </div>
 
