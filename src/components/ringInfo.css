@@ -107,9 +107,10 @@
 
   .ringInfo2Top {
     /* bottom: -6rem; */
-    top: 30rem;
+    top: 31rem;
     height: 20rem;
     overflow: scroll;
+    max-width: 20rem;
   }
 
   .interpretation {
