@@ -1010,7 +1010,7 @@ class Knob4 extends Component {
 
   generateInterpetation = (toInterpret) => {
 
-    // check toInterpret for exaltation, detriment and domicile
+    // check toInterpret for combo descriptions as well as exaltation, detriment and domicile
 
     let interpretation = [
       {key: 'planet', val: '', values: []},
