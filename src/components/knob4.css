@@ -86,7 +86,12 @@ canvas {
   /* padding: 3rem; */
 }
 .borderedRing {
-  border:5px solid red;
+  /* border:5px solid red; */
+  -webkit-animation: yellowBorderGlow 2s ease-in-out;
+  -moz-animation: yellowBorderGlow 2s ease-in-out;
+  animation: yellowBorderGlow 2s ease-in-out;
+
+  animation-iteration-count: infinite;
 }
 
 .controlsBox {
@@ -151,6 +156,13 @@ canvas {
   font-weight: bold;
 }
 
+.yellowBlink {
+  -webkit-animation: yellowBorderGlow .5s ease-in-out;
+  -moz-animation: yellowBorderGlow .5s ease-in-out;
+  animation: yellowBorderGlow .5s ease-in-out;
+}
+
+
 @media screen and (max-width: 420px) {
   .mobile {
     display: inline-block;
@@ -208,4 +220,20 @@ canvas {
   .KnobBoxTop {
     width: 120vw;
   }
+}
+
+@-webkit-keyframes yellowBorderGlow {
+  0% {border:2px solid #FFB637; box-shadow: 0 0 3px #ffffff}
+  50% {border:2px solid #ffffff; box-shadow: 0 0 30px #FFB637}
+  100% {border:2px solid #FFB637; box-shadow: 0 0 3px #ffffff}
+}
+@-moz-keyframes yellowBorderGlow {
+  0% {border:2px solid #FFB637; box-shadow: 0 0 3px #ffffff}
+  50% {border:2px solid #ffffff; box-shadow: 0 0 30px #FFB637}
+  100% {border:2px solid #FFB637; box-shadow: 0 0 3px #ffffff}
+}
+@keyframes yellowBorderGlow {
+  0% {border:2px solid #FFB637; box-shadow: 0 0 3px #ffffff}
+  50% {border:2px solid #ffffff; box-shadow: 0 0 30px #FFB637}
+  100% {border:2px solid #FFB637; box-shadow: 0 0 3px #ffffff}
 }

@@ -42,9 +42,13 @@
     /* margin: 1rem 0; */
 }
 
-/* .controlsBtn: hover {
-  border: 1px solid red;
-} */
+.controlsBtn {
+  /* border: 1px solid red; */
+}
+.controlBtnHighlight {
+  border: solid 2px green;
+  background-color: #06d6a0;
+}
 
 @media screen and (max-width: 420px) {
   .mobile {

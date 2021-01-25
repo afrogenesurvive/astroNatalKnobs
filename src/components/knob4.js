@@ -1258,6 +1258,8 @@ class Knob4 extends Component {
             toggleMobile={this.toggleMobile}
             ringInfoState={this.state.ringInfoState}
             toggleRingInfo={this.toggleRingInfo}
+            selectedRing={this.state.selectedRing}
+            selectedRingName={this.state.selectedRingName}
           />
 
           {this.state.ringInfoState === true && (

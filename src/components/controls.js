@@ -34,10 +34,27 @@ import {
   faMoon,
   faSign,
   faQuestionCircle,
+  faUndo,
+  faRedo,
 } from '@fortawesome/free-solid-svg-icons';
 
 
 const Controls = (props) => {
+
+  console.log(props.selectedRingName);
+
+  let planetBtnClass = "controlsBtn";
+  let signBtnClass = "controlsBtn";
+  let houseBtnClass = "controlsBtn";
+  if (props.selectedRingName === "planet") {
+    planetBtnClass = "controlsBtn controlBtnHighlight";
+  }
+  if (props.selectedRingName === "sign") {
+    signBtnClass = "controlsBtn controlBtnHighlight";
+  }
+  if (props.selectedRingName === "house") {
+    houseBtnClass = "controlsBtn controlBtnHighlight";
+  }
 
     return (
       <div className="controlsTop">
@@ -57,7 +74,7 @@ const Controls = (props) => {
                 </Popover>
               }
             >
-              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 1})}>
+              <Button variant="light" className={planetBtnClass} onClick={props.controlsInput.bind(this, {type:'select2',value: 1})}>
                 <FontAwesomeIcon icon={faMoon} className="controlIcon" size="lg"/>
               </Button>
             </OverlayTrigger>
@@ -75,7 +92,7 @@ const Controls = (props) => {
                 </Popover>
               }
             >
-              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 2})}>
+              <Button variant="light" className={signBtnClass} onClick={props.controlsInput.bind(this, {type:'select2',value: 2})}>
                 <FontAwesomeIcon icon={faSign} className="controlIcon" size="lg"/>
               </Button>
             </OverlayTrigger>
@@ -92,7 +109,7 @@ const Controls = (props) => {
                 </Popover>
               }
             >
-              <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'select2',value: 3})}>
+              <Button variant="light" className={houseBtnClass} onClick={props.controlsInput.bind(this, {type:'select2',value: 3})}>
                 <FontAwesomeIcon icon={faHome} className="controlIcon" size="lg"/>
               </Button>
             </OverlayTrigger>
@@ -140,7 +157,7 @@ const Controls = (props) => {
               }
             >
             <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'left'})}>
-              <FontAwesomeIcon icon={faStepBackward} className="controlIcon" size="lg"/>
+              <FontAwesomeIcon icon={faUndo} className="controlIcon" size="lg"/>
             </Button>
             </OverlayTrigger>
             </li>
@@ -157,7 +174,7 @@ const Controls = (props) => {
               }
             >
             <Button variant="light" className="controlsBtn" onClick={props.controlsInput.bind(this, {type:'rotate',value:'right'})}>
-              <FontAwesomeIcon icon={faStepForward} className="controlIcon" size="lg"/>
+              <FontAwesomeIcon icon={faRedo} className="controlIcon" size="lg"/>
             </Button>
             </OverlayTrigger>
             </li>
