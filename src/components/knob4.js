@@ -1113,14 +1113,14 @@ class Knob4 extends Component {
       thisInterpretation.planet.interp = `Your ${interpretation[0].val}: which represents ${interpretation[0].values[0][0]}, ${interpretation[0].values[0][1]}, ${interpretation[0].values[0][3]}...`;
       thisInterpretation2.planet.interp.a = 'Your ';
       thisInterpretation2.planet.interp.b = ' '+interpretation[0].val+' ';
-      thisInterpretation2.planet.interp.c = 'which represents' ;
+      thisInterpretation2.planet.interp.c = 'which represents the following aspects of your personality' ;
       thisInterpretation2.planet.interp.d = [interpretation[0].values[0][0],interpretation[0].values[0][1],interpretation[0].values[0][2],interpretation[0].values[0][3],interpretation[0].values[0][4],interpretation[0].values[0][5],interpretation[0].values[0][6]];
     }
     if (thisInterpretation.sign.state === true ) {
-      thisInterpretation.sign.interp = `Being in ${interpretation[1].val}: has the qualities of ${interpretation[1].values[0][0]}, ${interpretation[1].values[0][1]}, ${interpretation[1].values[0][3]}...`;
+      thisInterpretation.sign.interp = `Being in ${interpretation[1].val}: any of the above will be expressed ${interpretation[1].values[0][0]}, ${interpretation[1].values[0][1]}, ${interpretation[1].values[0][3]}...`;
       thisInterpretation2.sign.interp.a = 'Being in ';
       thisInterpretation2.sign.interp.b = ' '+interpretation[1].val+' ';
-      thisInterpretation2.sign.interp.c =  ': has the qualities of ';
+      thisInterpretation2.sign.interp.c =  ': any of the above will be expressed with the following "flavours" ';
       thisInterpretation2.sign.interp.d = [interpretation[1].values[0][0],interpretation[1].values[0][1],interpretation[1].values[0][2],interpretation[1].values[0][3],interpretation[1].values[0][4],interpretation[1].values[0][5],interpretation[1].values[0][6]];
     }
     if (thisInterpretation.house.state === true ) {
