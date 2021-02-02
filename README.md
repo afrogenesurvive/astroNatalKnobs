@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Astro-Natal-Knobs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is it??
 
-## Available Scripts
+- A digital toy for learning aspects of an astrological natal chart
 
-In the project directory, you can run:
+### Features:
+- A set of dials/knobs for selecting natal Planet, Sign and house
+- Interpretations of each combination of the above
+- Toggle rings to further refine interpretations
+- Click glyphs to learn more about astrological points
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="https://i.imgur.com/a4XQlDa.png" height="440" />
+<img src="https://i.imgur.com/kqXSxiM.png" height="440" />
+<img src="https://i.imgur.com/SUssAwj.png" height="440" />
+<img src="https://i.imgur.com/ViCVWmf.png" height="440" />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Why was it made??
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a fan of astrology myself, when reading a natal chart, I found it tedious to leave through at least 3 sections of an astrology book or finding 2 or more articles to reference one aspect on the natal chart. I wanted to make a quick reference for myself and a tool for other fans of astrology to learn from.
 
-### `npm run build`
+## How was it made??
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Made using:
+  - React w/ Create React App
+  - HTML Canvas
+  - Deployed w/ Netlify
+  - Bootstrap
+  - Dev Notes:
+    - Interpretations to be refined
+    - Exaltation, Domicile, Detriment of planets in signs to be added
+    - Graphical updates to be added
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Try it yourself??
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Download the code or clone the repository
+- Run "npm install" in the root folder
+- Run "npm start" in the root folder
+- Visit @ https://astronatalknobs.netlify.app
