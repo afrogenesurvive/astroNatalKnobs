@@ -336,7 +336,9 @@ class Knob4 extends Component {
       canvas2.height = 230;
       canvas3.height = 365;
 
-      imgMobile3.onload=function(){
+
+      // imgMobile3.onload=function(){
+      this.refs.imageTogggledMobile3.onload = () => {
         context1.drawImage(imgMobile1,canvas1.width/2-imgMobile1.width/2,canvas1.height/2-imgMobile1.width/2);
         context2.drawImage(imgMobile2,canvas2.width/2-imgMobile2.width/2,canvas2.height/2-imgMobile2.width/2);
         context3.drawImage(imgMobile3,canvas3.width/2-imgMobile3.width/2,canvas3.height/2-imgMobile3.width/2);
@@ -344,7 +346,8 @@ class Knob4 extends Component {
     }
 
     if (mobile === false) {
-      img3.onload=function(){
+      // img3.onload=function(){
+      this.refs.imageTogggledMobile3.onload = () => {
         context1.drawImage(img1,canvas1.width/2-img1.width/2,canvas1.height/2-img1.width/2);
         context2.drawImage(img2,canvas2.width/2-img2.width/2,canvas2.height/2-img2.width/2);
         context3.drawImage(img3,canvas3.width/2-img3.width/2,canvas3.height/2-img3.width/2);
